@@ -8,11 +8,17 @@
         function __construct() {
 
             parent::__construct();
+
+            
         }
 
         public function index(){
-            
+
+            $this->load->view('template/header');
+
             $this->load->view('dashboard/view_dashboard');
+
+            $this->load->view('template/footer');
         }    
     }
     

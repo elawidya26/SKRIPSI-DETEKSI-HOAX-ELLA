@@ -15,14 +15,12 @@ License: You must have a valid license purchased only from themeforest(the above
 <html lang="en">
 	<!--begin::Head-->
 	<head>
-		<!-- Google Tag Manager -->
-		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-5FS8GGP');</script>
-		<!-- End Google Tag Manager -->
+		
 		<meta charset="utf-8" />
 		<title>Login</title>
 		<meta name="description" content="Login page example" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-		<link rel="canonical" href="https://keenthemes.com/metronic" />
+		<link rel="canonical" href="" />
 		<!--begin::Fonts-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 		<!--end::Fonts-->
@@ -36,9 +34,8 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--end::Global Theme Styles-->
 		<!--begin::Layout Themes(used by all pages)-->
 		<!--end::Layout Themes-->
-		<link rel="shortcut icon" href="<?php echo base_url() ?>assets/media/logos/favicon.ico" />
-		<!-- Hotjar Tracking Code for keenthemes.com -->
-		<script>(function(h,o,t,j,a,r){ h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)}; h._hjSettings={hjid:1070954,hjsv:6}; a=o.getElementsByTagName('head')[0]; r=o.createElement('script');r.async=1; r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv; a.appendChild(r); })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');</script>
+		<link rel="shortcut icon" href="<?php echo base_url() ?>assets/media/logos/logopolinema.png" />
+		
 	</head>
 	<!--end::Head-->
 	<!--begin::Body-->
@@ -66,8 +63,11 @@ License: You must have a valid license purchased only from themeforest(the above
 							<div class="mb-20">
 								<h3>Masuk ke Admin</h3>
 								<p class="opacity-60 font-weight-bold">Masukkan detail Anda untuk masuk ke akun Anda::</p>
+
+								<?php echo $this->session->flashdata('pesan') ?>
 							</div>
-							<form class="form" id="kt_login_signin_form">
+
+							<form class="form" action="<?php echo base_url('login/proseslogin') ?>" method="POST">
 								<div class="form-group">
 									<input class="form-control h-auto text-white placeholder-white opacity-70 bg-dark-o-70 rounded-pill border-0 py-4 px-8 mb-5" type="text" placeholder="username" name="username" autocomplete="off" />
 								</div>
@@ -83,7 +83,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									
 								</div>
 								<div class="form-group text-center mt-10">
-									<a href="<?php echo base_url('dashboard/index') ?>" class="btn btn-pill btn-outline-white font-weight-bold opacity-90 px-15 py-3">Masuk</a>
+									<button class="btn btn-pill btn-outline-white font-weight-bold opacity-90 px-15 py-3">Masuk</button>
 								</div>
 							</form>
 							
