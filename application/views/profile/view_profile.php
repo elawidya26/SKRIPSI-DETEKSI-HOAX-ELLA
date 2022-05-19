@@ -113,15 +113,11 @@
 										<table class="table table-separate table-head-custom table-checkable" id="kt_datatable">
 											<thead>
 												<tr>
-													<th>id_lapor_hoax</th>
-													<th>judul</th>
-													<th>isi</th>
-													<th>label</th>
-													<th>sumber</th>
-													<th>bukti</th>
+													<th>id_profile</th>
+													<th>username</th>
+													<th>password</th>
 													<th>nama</th>
-													<th>email</th>
-													<th>status</th>
+													<th>foto</th>
 													<th>created_at</th>
 													<th>updated_at</th>
 													
@@ -137,10 +133,6 @@
 													<td>foto</td>
 													<td>698 Oriole Pass</td>
 													<td>Hayes Boule</td>
-													<td>São Félix do Xingu</td>
-													<td>foto</td>
-													<td>698 Oriole Pass</td>
-													<td>Hayes Boule</td>
 													<td nowrap="nowrap"></td>
 												</tr>
 												<tr>
@@ -151,10 +143,7 @@
 													<td>foto</td>
 													<td>8998 Delaware Court</td>
 													<td>Humbert Bresnen</td>
-													<td>São Félix do Xingu</td>
-													<td>foto</td>
-													<td>698 Oriole Pass</td>
-													<td>Hayes Boule</td>
+													
 													<td nowrap="nowrap"></td>
 												</tr>
 												<tr>
@@ -165,10 +154,7 @@
 													<td>foto</td>
 													<td>91796 Sutteridge Road</td>
 													<td>Jareb Labro</td>
-													<td>São Félix do Xingu</td>
-													<td>foto</td>
-													<td>698 Oriole Pass</td>
-													<td>Hayes Boule</td>
+													
 													<td nowrap="nowrap"></td>
 												</tr>
 												

@@ -113,15 +113,10 @@
 										<table class="table table-separate table-head-custom table-checkable" id="kt_datatable">
 											<thead>
 												<tr>
-													<th>id_lapor_hoax</th>
-													<th>judul</th>
-													<th>isi</th>
+													<th>id_preprocessing</th>
+													<th>id_dataset</th>
+													<th>hasil</th>
 													<th>label</th>
-													<th>sumber</th>
-													<th>bukti</th>
-													<th>nama</th>
-													<th>email</th>
-													<th>status</th>
 													<th>created_at</th>
 													<th>updated_at</th>
 													
@@ -134,11 +129,6 @@
 													<td>64616-103</td>
 													<td>Brazil</td>
 													<td>São Félix do Xingu</td>
-													<td>foto</td>
-													<td>698 Oriole Pass</td>
-													<td>Hayes Boule</td>
-													<td>São Félix do Xingu</td>
-													<td>foto</td>
 													<td>698 Oriole Pass</td>
 													<td>Hayes Boule</td>
 													<td nowrap="nowrap"></td>
@@ -148,13 +138,9 @@
 													<td>54868-3377</td>
 													<td>Vietnam</td>
 													<td>Bình Minh</td>
-													<td>foto</td>
 													<td>8998 Delaware Court</td>
 													<td>Humbert Bresnen</td>
-													<td>São Félix do Xingu</td>
-													<td>foto</td>
-													<td>698 Oriole Pass</td>
-													<td>Hayes Boule</td>
+													
 													<td nowrap="nowrap"></td>
 												</tr>
 												<tr>
@@ -162,13 +148,9 @@
 													<td>0998-0355</td>
 													<td>Philippines</td>
 													<td>Palagao Norte</td>
-													<td>foto</td>
 													<td>91796 Sutteridge Road</td>
 													<td>Jareb Labro</td>
-													<td>São Félix do Xingu</td>
-													<td>foto</td>
-													<td>698 Oriole Pass</td>
-													<td>Hayes Boule</td>
+													
 													<td nowrap="nowrap"></td>
 												</tr>
 												

@@ -19,8 +19,8 @@ License: You must have a valid license purchased only from themeforest(the above
 		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-5FS8GGP');</script>
 		<!-- End Google Tag Manager -->
 		<meta charset="utf-8" />
-		<title>Berita Deteksi Hoax</title>
-		<meta name="description" content="General card examples" />
+		<title>Berita</title>
+		<meta name="description" content="Initialized with local json data" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 		<link rel="canonical" href="https://keenthemes.com/metronic" />
 		<!--begin::Fonts-->
@@ -55,7 +55,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					<div id="kt_header_mobile" class="header-mobile">
 						<!--begin::Logo-->
 						<a href="/metronic/demo8/index.html">
-							<img alt="Logo" src="<?php echo base_url() ?>assets/media/logos/logopolinema.png" class="max-h-60px" />
+							<img alt="Logo" src="<?php echo base_url() ?>assets/media/logos/logo-default.png" class="max-h-30px" />
 						</a>
 						<!--end::Logo-->
 						<!--begin::Toolbar-->
@@ -88,7 +88,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							<div class="d-none d-lg-flex align-items-center mr-3">
 								<!--begin::Logo-->
 								<a href="/metronic/demo8/index.html" class="mr-20">
-									<img alt="Logo" src="<?php echo base_url() ?>assets/media/logos/logopolinema.png" class="logo-default max-h-60px" />
+									<img alt="Logo" src="<?php echo base_url() ?>assets/media/logos/logo-default.png" class="logo-default max-h-35px" />
 								</a>
 								<!--end::Logo-->
 							</div>
@@ -993,7 +993,7 @@ License: You must have a valid license purchased only from themeforest(the above
 								<!--begin::Header Nav-->
 								<ul class="menu-nav">
 									<li class="menu-item menu-item-submenu menu-item-rel" data-menu-toggle="click" aria-haspopup="true">
-										<a href="<?php echo base_url('Dashboard/index') ?>" class="menu-link ">
+										<a href="<?php echo base_url('dashboard/index') ?>" class="menu-link">
 											<span class="menu-text">Dashboard</span>
 											
 										</a>
@@ -1014,8 +1014,8 @@ License: You must have a valid license purchased only from themeforest(the above
 											</ul>
 										</div>
 									</li>
-									<li class="menu-item menu-item-open menu-item-here menu-item-submenu menu-item-rel menu-item-open menu-item-here" data-menu-toggle="click" aria-haspopup="true">
-										<a href="<?php echo base_url('berita/index') ?>" class="menu-link ">
+									<li class="menu-item menu-item-submenu menu-item-rel" data-menu-toggle="click" aria-haspopup="true">
+										<a href="<?php echo base_url('Berita/index') ?>" class="menu-link">
 											<span class="menu-text">Berita</span>
 											<span class="menu-desc"></span>
 											
@@ -1327,7 +1327,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</ul>
 													</div>
 												</li>
-												<li class="menu-item menu-item-open menu-item-here menu-item-submenu" data-menu-toggle="hover" aria-haspopup="true">
+												<li class="menu-item menu-item-submenu" data-menu-toggle="hover" aria-haspopup="true">
 													<a href="javascript:;" class="menu-link menu-toggle">
 														<span class="svg-icon menu-icon">
 															<!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/Communication/Adress-book2.svg-->
@@ -1345,7 +1345,7 @@ License: You must have a valid license purchased only from themeforest(the above
 													</a>
 													<div class="menu-submenu menu-submenu-classic menu-submenu-right">
 														<ul class="menu-subnav">
-															<li class="menu-item menu-item-active" aria-haspopup="true">
+															<li class="menu-item" aria-haspopup="true">
 																<a href="/metronic/demo8/features/cards/general.html" class="menu-link">
 																	<i class="menu-bullet menu-bullet-dot">
 																		<span></span>
@@ -1829,8 +1829,8 @@ License: You must have a valid license purchased only from themeforest(the above
 											</ul>
 										</div>
 									</li>
-									<li class="menu-item menu-item-submenu menu-item-rel" data-menu-toggle="click" aria-haspopup="true">
-										<a href="<?php echo base_url('Lapor_hoax/index') ?>" class="menu-link">
+									<li class="menu-item menu-item-open menu-item-here menu-item-submenu menu-item-rel menu-item-open menu-item-here" data-menu-toggle="click" aria-haspopup="true">
+										<a href="<?php echo base_url('lapor_hoax/index') ?>" class="menu-link">
 											<span class="menu-text">Lapor Hoax</span>
 											<span class="menu-desc"></span>
 											
@@ -2285,7 +2285,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														</ul>
 													</div>
 												</li>
-												<li class="menu-item menu-item-submenu" data-menu-toggle="hover" aria-haspopup="true">
+												<li class="menu-item menu-item-open menu-item-here menu-item-submenu" data-menu-toggle="hover" aria-haspopup="true">
 													<a href="javascript:;" class="menu-link menu-toggle">
 														<span class="svg-icon menu-icon">
 															<!--begin::Svg Icon | path:/metronic/theme/html/demo1/dist/assets/media/svg/icons/General/Thunder-move.svg-->
@@ -2303,7 +2303,7 @@ License: You must have a valid license purchased only from themeforest(the above
 													</a>
 													<div class="menu-submenu menu-submenu-classic menu-submenu-right">
 														<ul class="menu-subnav">
-															<li class="menu-item menu-item-submenu" data-menu-toggle="hover" aria-haspopup="true">
+															<li class="menu-item menu-item-open menu-item-here menu-item-submenu" data-menu-toggle="hover" aria-haspopup="true">
 																<a href="javascript:;" class="menu-link menu-toggle">
 																	<i class="menu-bullet menu-bullet-dot">
 																		<span></span>
@@ -2313,7 +2313,7 @@ License: You must have a valid license purchased only from themeforest(the above
 																</a>
 																<div class="menu-submenu menu-submenu-classic menu-submenu-right">
 																	<ul class="menu-subnav">
-																		<li class="menu-item" aria-haspopup="true">
+																		<li class="menu-item menu-item-active" aria-haspopup="true">
 																			<a href="/metronic/demo8/crud/ktdatatable/base/data-local.html" class="menu-link">
 																				<i class="menu-bullet menu-bullet-dot">
 																					<span></span>
@@ -2813,10 +2813,10 @@ License: You must have a valid license purchased only from themeforest(the above
 										</div>
 									</li>
 									<li class="menu-item menu-item-submenu menu-item-rel" data-menu-toggle="click" aria-haspopup="true">
-										<a href="javascript:;" class="menu-link menu-toggle">
-											<span class="menu-text">Apps</span>
+										<a href="<?php echo base_url('Uji_user/index') ?>" class="menu-link">
+											<span class="menu-text">Uji User</span>
 											<span class="menu-desc"></span>
-											<i class="menu-arrow"></i>
+											
 										</a>
 										<div class="menu-submenu menu-submenu-classic menu-submenu-left">
 											<ul class="menu-subnav">
@@ -3930,18 +3930,21 @@ License: You must have a valid license purchased only from themeforest(the above
 										<!--begin::Page Heading-->
 										<div class="d-flex align-items-baseline flex-wrap mr-5">
 											<!--begin::Page Title-->
-											<h5 class="text-dark font-weight-bold my-1 mr-5">General Cards</h5>
+											<h5 class="text-dark font-weight-bold my-1 mr-5">Local Data</h5>
 											<!--end::Page Title-->
 											<!--begin::Breadcrumb-->
 											<ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
 												<li class="breadcrumb-item text-muted">
-													<a href="" class="text-muted">Features</a>
+													<a href="" class="text-muted">Crud</a>
 												</li>
 												<li class="breadcrumb-item text-muted">
-													<a href="" class="text-muted">Cards</a>
+													<a href="" class="text-muted">KTDatatable</a>
 												</li>
 												<li class="breadcrumb-item text-muted">
-													<a href="" class="text-muted">General Cards</a>
+													<a href="" class="text-muted">Base</a>
+												</li>
+												<li class="breadcrumb-item text-muted">
+													<a href="" class="text-muted">Local Data</a>
 												</li>
 											</ul>
 											<!--end::Breadcrumb-->
@@ -4032,7 +4035,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							<!--end::Subheader-->
 							<div class="content flex-column-fluid" id="kt_content">
 								<!--begin::Notice-->
-								<div class="alert alert-custom alert-white alert-shadow fade show gutter-b" role="alert">
+								<div class="alert alert-custom alert-white alert-shadow gutter-b" role="alert">
 									<div class="alert-icon">
 										<span class="svg-icon svg-icon-primary svg-icon-xl">
 											<!--begin::Svg Icon | path:<?php echo base_url() ?>assets/media/svg/icons/Tools/Compass.svg-->
@@ -4046,630 +4049,154 @@ License: You must have a valid license purchased only from themeforest(the above
 											<!--end::Svg Icon-->
 										</span>
 									</div>
-									<div class="alert-text">Metronic extends 
-									<code>Bootstrap Card</code>with 
-									<code>.card-custom</code>class to provide a wide range of options for multi-purpose cards. 
-									<br />For more info please visit Bootstrap Card's 
-									<a class="font-weight-bold" href="https://getbootstrap.com/docs/4.6/components/card/" target="_blank">Documentation</a>.</div>
+									<div class="alert-text">The Metronic KTDatatable supports vertical scrolling with fixed height.local or remote data source. For the local data you can pass javascript array as data source. In this example the grid fetches its data from a javascript array data source. For more information visit 
+									<a class="font-weight-bold" href="https://keenthemes.com/metronic/?page=docs&amp;section=html/components/datatable" target="_blank">Metronic KTDatatable Documentation</a>.</div>
 								</div>
 								<!--end::Notice-->
-								<!--begin::Row-->
-								<div class="row">
-									<div class="col-lg-6">
-										<!--begin::Example-->
-										<!--begin::Card-->
-										<div class="card card-custom">
-											<div class="card-header">
-												<div class="card-title">
-													<h3 class="card-label">Basic Card 
-													<small>sub title</small></h3>
-												</div>
-											</div>
-											<div class="card-body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.</div>
+								<!--begin::Card-->
+								<div class="card card-custom">
+									<div class="card-header flex-wrap border-0 pt-6 pb-0">
+										<div class="card-title">
+											<h3 class="card-label">Local Datasource 
+											<span class="text-muted pt-2 font-size-sm d-block">Javascript array as data source</span></h3>
 										</div>
-										<!--end::Card-->
-										<!--begin::Code example-->
-										<div class="example example-compact mt-2 gutter-b">
-											
-											<div class="example-code">
-												<div class="example-highlight">
-													<pre>
-<code class="language-html">
-                &lt;div class="card card-custom gutter-b"&gt;
-                 &lt;div class="card-header"&gt;
-                  &lt;div class="card-title"&gt;
-                   &lt;h3 class="card-label"&gt;
-                    Basic Card
-                    &lt;small&gt;sub title&lt;/small&gt;
-                   &lt;/h3&gt;
-                  &lt;/div&gt;
-                 &lt;/div&gt;
-                 &lt;div class="card-body"&gt;
-                  ...
-                 &lt;/div&gt;
-                &lt;/div&gt;
-                </code>
-</pre>
+										<div class="card-toolbar">
+											<!--begin::Dropdown-->
+											<div class="dropdown dropdown-inline mr-2">
+												<button type="button" class="btn btn-light-primary font-weight-bolder dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												<span class="svg-icon svg-icon-md">
+													<!--begin::Svg Icon | path:<?php echo base_url() ?>assets/media/svg/icons/Design/PenAndRuller.svg-->
+													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+														<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+															<rect x="0" y="0" width="24" height="24" />
+															<path d="M3,16 L5,16 C5.55228475,16 6,15.5522847 6,15 C6,14.4477153 5.55228475,14 5,14 L3,14 L3,12 L5,12 C5.55228475,12 6,11.5522847 6,11 C6,10.4477153 5.55228475,10 5,10 L3,10 L3,8 L5,8 C5.55228475,8 6,7.55228475 6,7 C6,6.44771525 5.55228475,6 5,6 L3,6 L3,4 C3,3.44771525 3.44771525,3 4,3 L10,3 C10.5522847,3 11,3.44771525 11,4 L11,19 C11,19.5522847 10.5522847,20 10,20 L4,20 C3.44771525,20 3,19.5522847 3,19 L3,16 Z" fill="#000000" opacity="0.3" />
+															<path d="M16,3 L19,3 C20.1045695,3 21,3.8954305 21,5 L21,15.2485298 C21,15.7329761 20.8241635,16.200956 20.5051534,16.565539 L17.8762883,19.5699562 C17.6944473,19.7777745 17.378566,19.7988332 17.1707477,19.6169922 C17.1540423,19.602375 17.1383289,19.5866616 17.1237117,19.5699562 L14.4948466,16.565539 C14.1758365,16.200956 14,15.7329761 14,15.2485298 L14,5 C14,3.8954305 14.8954305,3 16,3 Z" fill="#000000" />
+														</g>
+													</svg>
+													<!--end::Svg Icon-->
+												</span>Export</button>
+												<!--begin::Dropdown Menu-->
+												<div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
+													<!--begin::Navigation-->
+													<ul class="navi flex-column navi-hover py-2">
+														<li class="navi-header font-weight-bolder text-uppercase font-size-sm text-primary pb-2">Choose an option:</li>
+														<li class="navi-item">
+															<a href="#" class="navi-link">
+																<span class="navi-icon">
+																	<i class="la la-print"></i>
+																</span>
+																<span class="navi-text">Print</span>
+															</a>
+														</li>
+														<li class="navi-item">
+															<a href="#" class="navi-link">
+																<span class="navi-icon">
+																	<i class="la la-copy"></i>
+																</span>
+																<span class="navi-text">Copy</span>
+															</a>
+														</li>
+														<li class="navi-item">
+															<a href="#" class="navi-link">
+																<span class="navi-icon">
+																	<i class="la la-file-excel-o"></i>
+																</span>
+																<span class="navi-text">Excel</span>
+															</a>
+														</li>
+														<li class="navi-item">
+															<a href="#" class="navi-link">
+																<span class="navi-icon">
+																	<i class="la la-file-text-o"></i>
+																</span>
+																<span class="navi-text">CSV</span>
+															</a>
+														</li>
+														<li class="navi-item">
+															<a href="#" class="navi-link">
+																<span class="navi-icon">
+																	<i class="la la-file-pdf-o"></i>
+																</span>
+																<span class="navi-text">PDF</span>
+															</a>
+														</li>
+													</ul>
+													<!--end::Navigation-->
 												</div>
+												<!--end::Dropdown Menu-->
 											</div>
+											<!--end::Dropdown-->
+											<!--begin::Button-->
+											<a href="#" class="btn btn-primary font-weight-bolder">
+											<span class="svg-icon svg-icon-md">
+												<!--begin::Svg Icon | path:<?php echo base_url() ?>assets/media/svg/icons/Design/Flatten.svg-->
+												<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+													<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+														<rect x="0" y="0" width="24" height="24" />
+														<circle fill="#000000" cx="9" cy="15" r="6" />
+														<path d="M8.8012943,7.00241953 C9.83837775,5.20768121 11.7781543,4 14,4 C17.3137085,4 20,6.6862915 20,10 C20,12.2218457 18.7923188,14.1616223 16.9975805,15.1987057 C16.9991904,15.1326658 17,15.0664274 17,15 C17,10.581722 13.418278,7 9,7 C8.93357256,7 8.86733422,7.00080962 8.8012943,7.00241953 Z" fill="#000000" opacity="0.3" />
+													</g>
+												</svg>
+												<!--end::Svg Icon-->
+											</span>New Record</a>
+											<!--end::Button-->
 										</div>
-										<!--end::Code example-->
-										<!--end::Example-->
-										<!--begin::Example-->
-										<!--begin::Card-->
-										<div class="card card-custom">
-											<div class="card-header">
-												<div class="card-title">
-													<span class="card-icon">
-														<i class="flaticon2-line-chart text-primary"></i>
-													</span>
-													<h3 class="card-label">Card Icon 
-													<small>sub title</small></h3>
-												</div>
-											</div>
-											<div class="card-body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.</div>
-										</div>
-										<!--end::Card-->
-										<!--begin::Code example-->
-										<div class="example example-compact mt-2 gutter-b">
-											
-											<div class="example-code">
-												<div class="example-highlight">
-													<pre>
-<code class="language-html">
-                &lt;div class="card card-custom gutter-b"&gt;
-                 &lt;div class="card-header"&gt;
-                  &lt;div class="card-title"&gt;
-                   &lt;h3 class="card-label"&gt;
-                    Basic Card
-                    &lt;small&gt;sub title&lt;/small&gt;
-                   &lt;/h3&gt;
-                  &lt;/div&gt;
-                 &lt;/div&gt;
-                 &lt;div class="card-body"&gt;
-                  ...
-                 &lt;/div&gt;
-                &lt;/div&gt;
-                </code>
-</pre>
-												</div>
-											</div>
-										</div>
-										<!--end::Code example-->
-										<!--end::Example-->
-										<!--begin::Example-->
-										<!--begin::Card-->
-										<div class="card card-custom">
-											<div class="card-header">
-												<div class="card-title">
-													<span class="card-icon">
-														<i class="flaticon2-chat-1 text-primary"></i>
-													</span>
-													<h3 class="card-label">Card Toolbar 
-													<small>sub title</small></h3>
-												</div>
-												<div class="card-toolbar">
-													<a href="#" class="btn btn-sm btn-icon btn-light-danger mr-2">
-														<i class="flaticon2-drop"></i>
-													</a>
-													<a href="#" class="btn btn-sm btn-icon btn-light-success mr-2">
-														<i class="flaticon2-gear"></i>
-													</a>
-													<a href="#" class="btn btn-sm btn-icon btn-light-primary">
-														<i class="flaticon2-bell-2"></i>
-													</a>
-												</div>
-											</div>
-											<div class="card-body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.</div>
-										</div>
-										<!--end::Card-->
-										<!--begin::Code example-->
-										<div class="example example-compact mt-2 gutter-b">
-											
-											<div class="example-code">
-												<div class="example-highlight">
-													<pre>
-<code class="language-html">
-                &lt;div class="card card-custom gutter-b"&gt;
-                 &lt;div class="card-header"&gt;
-                  &lt;div class="card-title"&gt;
-                   &lt;h3 class="card-label"&gt;
-                    Basic Card
-                    &lt;small&gt;sub title&lt;/small&gt;
-                   &lt;/h3&gt;
-                  &lt;/div&gt;
-                 &lt;/div&gt;
-                 &lt;div class="card-body"&gt;
-                  ...
-                 &lt;/div&gt;
-                &lt;/div&gt;
-                </code>
-</pre>
-												</div>
-											</div>
-										</div>
-										<!--end::Code example-->
-										<!--end::Example-->
-										<!--begin::Example-->
-										<!--begin::Card-->
-										<div class="card card-custom">
-											<div class="card-header">
-												<div class="card-title">
-													<span class="card-icon">
-														<i class="flaticon-graphic-2 text-primary"></i>
-													</span>
-													<h3 class="card-label">Dropdown Example 
-													<small>sub title</small></h3>
-												</div>
-												<div class="card-toolbar">
-													<div class="dropdown dropdown-inline" data-toggle="tooltip" title="Quick actions" data-placement="left">
-														<a href="#" class="btn btn-hover-light-primary btn-sm btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-															<i class="ki ki-bold-more-hor"></i>
-														</a>
-														<div class="dropdown-menu p-0 m-0 dropdown-menu-md dropdown-menu-right">
-															<!--begin::Navigation-->
-															<ul class="navi navi-hover">
-																<li class="navi-header font-weight-bold py-4">
-																	<span class="font-size-lg">Choose Label:</span>
-																	<i class="flaticon2-information icon-md text-muted" data-toggle="tooltip" data-placement="right" title="Click to learn more..."></i>
-																</li>
-																<li class="navi-separator mb-3 opacity-70"></li>
-																<li class="navi-item">
-																	<a href="#" class="navi-link">
-																		<span class="navi-text">
-																			<span class="label label-xl label-inline label-light-success">Customer</span>
-																		</span>
-																	</a>
-																</li>
-																<li class="navi-item">
-																	<a href="#" class="navi-link">
-																		<span class="navi-text">
-																			<span class="label label-xl label-inline label-light-danger">Partner</span>
-																		</span>
-																	</a>
-																</li>
-																<li class="navi-item">
-																	<a href="#" class="navi-link">
-																		<span class="navi-text">
-																			<span class="label label-xl label-inline label-light-warning">Suplier</span>
-																		</span>
-																	</a>
-																</li>
-																<li class="navi-item">
-																	<a href="#" class="navi-link">
-																		<span class="navi-text">
-																			<span class="label label-xl label-inline label-light-primary">Member</span>
-																		</span>
-																	</a>
-																</li>
-																<li class="navi-item">
-																	<a href="#" class="navi-link">
-																		<span class="navi-text">
-																			<span class="label label-xl label-inline label-light-dark">Staff</span>
-																		</span>
-																	</a>
-																</li>
-																<li class="navi-separator mt-3 opacity-70"></li>
-																<li class="navi-footer py-4">
-																	<a class="btn btn-clean font-weight-bold btn-sm" href="#">
-																	<i class="ki ki-plus icon-sm"></i>Add new</a>
-																</li>
-															</ul>
-															<!--end::Navigation-->
+									</div>
+									<div class="card-body">
+										<!--begin: Search Form-->
+										<!--begin::Search Form-->
+										<div class="mb-7">
+											<div class="row align-items-center">
+												<div class="col-lg-9 col-xl-8">
+													<div class="row align-items-center">
+														<div class="col-md-4 my-2 my-md-0">
+															<div class="input-icon">
+																<input type="text" class="form-control" placeholder="Search..." id="kt_datatable_search_query" />
+																<span>
+																	<i class="flaticon2-search-1 text-muted"></i>
+																</span>
+															</div>
+														</div>
+														<div class="col-md-4 my-2 my-md-0">
+															<div class="d-flex align-items-center">
+																<label class="mr-3 mb-0 d-none d-md-block">Status:</label>
+																<select class="form-control" id="kt_datatable_search_status">
+																	<option value="">All</option>
+																	<option value="1">Pending</option>
+																	<option value="2">Delivered</option>
+																	<option value="3">Canceled</option>
+																	<option value="4">Success</option>
+																	<option value="5">Info</option>
+																	<option value="6">Danger</option>
+																</select>
+															</div>
+														</div>
+														<div class="col-md-4 my-2 my-md-0">
+															<div class="d-flex align-items-center">
+																<label class="mr-3 mb-0 d-none d-md-block">Type:</label>
+																<select class="form-control" id="kt_datatable_search_type">
+																	<option value="">All</option>
+																	<option value="1">Online</option>
+																	<option value="2">Retail</option>
+																	<option value="3">Direct</option>
+																</select>
+															</div>
 														</div>
 													</div>
 												</div>
-											</div>
-											<div class="card-body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.</div>
-										</div>
-										<!--end::Card-->
-										<!--begin::Code example-->
-										<div class="example example-compact mt-2 gutter-b">
-											
-											<div class="example-code">
-												<div class="example-highlight">
-													<pre>
-<code class="language-html">
-                &lt;div class="card card-custom gutter-b"&gt;
-                 &lt;div class="card-header"&gt;
-                  &lt;div class="card-title"&gt;
-                   &lt;h3 class="card-label"&gt;
-                    Basic Card
-                    &lt;small&gt;sub title&lt;/small&gt;
-                   &lt;/h3&gt;
-                  &lt;/div&gt;
-                 &lt;/div&gt;
-                 &lt;div class="card-body"&gt;
-                  ...
-                 &lt;/div&gt;
-                &lt;/div&gt;
-                </code>
-</pre>
+												<div class="col-lg-3 col-xl-4 mt-5 mt-lg-0">
+													<a href="#" class="btn btn-light-primary px-6 font-weight-bold">Search</a>
 												</div>
 											</div>
 										</div>
-										<!--end::Code example-->
-										<!--end::Example-->
-										<!--begin::Example-->
-										<div class="bg-white rounded p-10">
-											<!--begin::Card-->
-											<div class="card card-custom card-border">
-												<div class="card-header">
-													<div class="card-title">
-														<span class="card-icon">
-															<i class="flaticon2-mail text-primary"></i>
-														</span>
-														<h3 class="card-label">Bordered Style 
-														<small>sub title</small></h3>
-													</div>
-													<div class="card-toolbar">
-														<a href="#" class="btn btn-xs btn-icon btn-danger mr-2">
-															<i class="flaticon2-drop"></i>
-														</a>
-														<a href="#" class="btn btn-xs btn-icon btn-success mr-2">
-															<i class="flaticon2-gear"></i>
-														</a>
-														<a href="#" class="btn btn-xs btn-icon btn-primary">
-															<i class="flaticon2-bell-2"></i>
-														</a>
-													</div>
-												</div>
-												<div class="card-body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.</div>
-											</div>
-											<!--end::Card-->
-										</div>
-										<!--begin::Code example-->
-										<div class="example example-compact mt-2 gutter-b">
-											
-											<div class="example-code">
-												<div class="example-highlight">
-													<pre>
-<code class="language-html">
-                &lt;div class="card card-custom gutter-b"&gt;
-                 &lt;div class="card-header"&gt;
-                  &lt;div class="card-title"&gt;
-                   &lt;h3 class="card-label"&gt;
-                    Basic Card
-                    &lt;small&gt;sub title&lt;/small&gt;
-                   &lt;/h3&gt;
-                  &lt;/div&gt;
-                 &lt;/div&gt;
-                 &lt;div class="card-body"&gt;
-                  ...
-                 &lt;/div&gt;
-                &lt;/div&gt;
-                </code>
-</pre>
-												</div>
-											</div>
-										</div>
-										<!--end::Code example-->
-										<!--end::Example-->
-										<!--begin::Example-->
-										<div class="bg-white rounded p-10">
-											<!--begin::Card-->
-											<div class="card card-custom card-fit card-border">
-												<div class="card-header">
-													<div class="card-title">
-														<span class="card-icon">
-															<i class="flaticon2-pin text-primary"></i>
-														</span>
-														<h3 class="card-label">Semi-bordered Style 
-														<small>sub title</small></h3>
-													</div>
-													<div class="card-toolbar">
-														<a href="#" class="btn btn-sm btn-primary font-weight-bold">
-														<i class="flaticon2-gear"></i>Settings</a>
-													</div>
-												</div>
-												<div class="card-body pt-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.</div>
-											</div>
-											<!--end::Card-->
-										</div>
-										<!--begin::Code example-->
-										<div class="example example-compact mt-2 gutter-b">
-											
-											<div class="example-code">
-												<div class="example-highlight">
-													<pre>
-<code class="language-html">
-                &lt;div class="card card-custom gutter-b"&gt;
-                 &lt;div class="card-header"&gt;
-                  &lt;div class="card-title"&gt;
-                   &lt;h3 class="card-label"&gt;
-                    Basic Card
-                    &lt;small&gt;sub title&lt;/small&gt;
-                   &lt;/h3&gt;
-                  &lt;/div&gt;
-                 &lt;/div&gt;
-                 &lt;div class="card-body"&gt;
-                  ...
-                 &lt;/div&gt;
-                &lt;/div&gt;
-                </code>
-</pre>
-												</div>
-											</div>
-										</div>
-										<!--end::Code example-->
-										<!--end::Example-->
-									</div>
-									<div class="col-lg-6">
-										<!--begin::Example-->
-										<!--begin::Card-->
-										<div class="card card-custom">
-											<div class="card-header">
-												<div class="card-title">
-													<span class="card-icon">
-														<i class="flaticon2-chat-1 text-primary"></i>
-													</span>
-													<h3 class="card-label">Card Footer 
-													<small>sub title</small></h3>
-												</div>
-												<div class="card-toolbar">
-													<a href="#" class="btn btn-sm btn-success font-weight-bold">
-													<i class="flaticon2-cube"></i>Reports</a>
-												</div>
-											</div>
-											<div class="card-body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.</div>
-											<div class="card-footer d-flex justify-content-between">
-												<a href="#" class="btn btn-light-primary font-weight-bold">Manage</a>
-												<a href="#" class="btn btn-outline-secondary font-weight-bold">Learn more</a>
-											</div>
-										</div>
-										<!--end::Card-->
-										<!--begin::Code example-->
-										<div class="example example-compact mt-2 gutter-b">
-											
-											<div class="example-code">
-												<div class="example-highlight">
-													<pre>
-<code class="language-html">
-                &lt;div class="card card-custom"&gt;
-                 &lt;div class="card-header"&gt;
-                  &lt;div class="card-title"&gt;
-                            &lt;span class="card-icon"&gt;
-                                &lt;i class="flaticon2-chat-1 text-primary"&gt;&lt;/i&gt;
-                            &lt;/span&gt;
-                   &lt;h3 class="card-label"&gt;
-                    Card Footer
-                    &lt;small&gt;sub title&lt;/small&gt;
-                   &lt;/h3&gt;
-                  &lt;/div&gt;
-                        &lt;div class="card-toolbar"&gt;
-                            &lt;a href="#" class="btn btn-sm btn-success font-weight-bold"&gt;
-                                &lt;i class="flaticon2-cube"&gt;&lt;/i&gt; Reports
-                            &lt;/a&gt;
-                        &lt;/div&gt;
-                 &lt;/div&gt;
-                 &lt;div class="card-body"&gt;
-                  ...
-                 &lt;/div&gt;
-                    &lt;div class="card-footer d-flex justify-content-between"&gt;
-                        &lt;a href="#" class="btn btn-light-primary font-weight-bold"&gt;Manage&lt;/a&gt;
-                        &lt;a href="#" class="btn btn-outline-secondary font-weight-bold"&gt;Learn more&lt;/a&gt;
-                 &lt;/div&gt;
-                &lt;/div&gt;
-                </code>
-</pre>
-												</div>
-											</div>
-										</div>
-										<!--end::Code example-->
-										<!--end::Example-->
-										<!--begin::Example-->
-										<!--begin::Card-->
-										<div class="card card-custom">
-											<div class="card-header">
-												<div class="card-title">
-													<span class="card-icon">
-														<i class="flaticon2-chat-1 text-primary"></i>
-													</span>
-													<h3 class="card-label">Scrollable Content</h3>
-												</div>
-												<div class="card-toolbar">
-													<a href="#" class="btn btn-sm btn-light-primary font-weight-bold">
-													<i class="flaticon2-cube"></i>Settings</a>
-												</div>
-											</div>
-											<div class="card-body">
-												<div data-scroll="true" data-height="200">
-													<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.</p>
-													<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.</p>
-													<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.</p>
-												</div>
-											</div>
-											<div class="card-footer d-flex justify-content-between">
-												<a href="#" class="btn btn-light-primary font-weight-bold">Manage</a>
-												<a href="#" class="btn btn-outline-secondary font-weight-bold">Learn more</a>
-											</div>
-										</div>
-										<!--end::Card-->
-										<!--begin::Code example-->
-										<div class="example example-compact mt-2 gutter-b">
-											
-											<div class="example-code">
-												<div class="example-highlight">
-													<pre>
-<code class="language-html">
-                &lt;div class="card card-custom"&gt;
-                 &lt;div class="card-header"&gt;
-                  &lt;div class="card-title"&gt;
-                            &lt;span class="card-icon"&gt;
-                                &lt;i class="flaticon2-chat-1 text-primary"&gt;&lt;/i&gt;
-                            &lt;/span&gt;
-                   &lt;h3 class="card-label"&gt;
-                    Scrollable Content
-                   &lt;/h3&gt;
-                  &lt;/div&gt;
-                        &lt;div class="card-toolbar"&gt;
-                            &lt;a href="#" class="btn btn-sm btn-light-primary font-weight-bold"&gt;
-                                &lt;i class="flaticon2-cube"&gt;&lt;/i&gt; Settings
-                            &lt;/a&gt;
-                        &lt;/div&gt;
-                 &lt;/div&gt;
-                 &lt;div class="card-body"&gt;
-                        &lt;div data-scroll="true" data-height="200"&gt;
-                      ....
-                        &lt;/div&gt;
-                 &lt;/div&gt;
-                    &lt;div class="card-footer d-flex justify-content-between"&gt;
-                        &lt;a href="#" class="btn btn-light-primary font-weight-bold"&gt;Manage&lt;/a&gt;
-                        &lt;a href="#" class="btn btn-outline-secondary font-weight-bold"&gt;Learn more&lt;/a&gt;
-                 &lt;/div&gt;
-                &lt;/div&gt;
-                </code>
-</pre>
-												</div>
-											</div>
-										</div>
-										<!--end::Code example-->
-										<!--end::Example-->
-										<!--begin::Example-->
-										<!--begin::Card-->
-										<div class="card card-custom bg-primary">
-											<div class="card-header border-0">
-												<div class="card-title">
-													<span class="card-icon">
-														<i class="flaticon2-chat-1 text-white"></i>
-													</span>
-													<h3 class="card-label text-white">Primary Background Color</h3>
-												</div>
-												<div class="card-toolbar">
-													<a href="#" class="btn btn-sm btn-white">
-													<i class="flaticon2-cube"></i>Settings</a>
-												</div>
-											</div>
-											<div class="separator separator-solid separator-white opacity-20"></div>
-											<div class="card-body text-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.</div>
-										</div>
-										<!--end::Card-->
-										<!--begin::Code example-->
-										<div class="example example-compact mt-2 gutter-b">
-											
-											<div class="example-code">
-												<div class="example-highlight">
-													<pre>
-<code class="language-html">
-                &lt;div class="card card-custom bg-primary"&gt;
-                 &lt;div class="card-header border-0"&gt;
-                  &lt;div class="card-title"&gt;
-                            &lt;span class="card-icon"&gt;
-                                &lt;i class="flaticon2-chat-1 text-white"&gt;&lt;/i&gt;
-                            &lt;/span&gt;
-                   &lt;h3 class="card-label text-white"&gt;
-                    Primary Background Color
-                   &lt;/h3&gt;
-                  &lt;/div&gt;
-                        &lt;div class="card-toolbar"&gt;
-                            &lt;a href="#" class="btn btn-sm btn-white"&gt;
-                                &lt;i class="flaticon2-cube"&gt;&lt;/i&gt; Settings
-                            &lt;/a&gt;
-                        &lt;/div&gt;
-                 &lt;/div&gt;
-                    &lt;div class="separator separator-solid separator-white opacity-20"&gt;&lt;/div&gt;
-                 &lt;div class="card-body text-white"&gt;
-                        ...
-                    &lt;/div&gt;
-                &lt;/div&gt;
-                </code>
-</pre>
-												</div>
-											</div>
-										</div>
-										<!--end::Code example-->
-										<!--end::Example-->
-										<!--begin::Example-->
-										<!--begin::Card-->
-										<div class="card card-custom bg-danger">
-											<div class="card-header border-0">
-												<div class="card-title">
-													<span class="card-icon">
-														<i class="flaticon2-chat-1 text-white"></i>
-													</span>
-													<h3 class="card-label text-white">Danger Background Color</h3>
-												</div>
-												<div class="card-toolbar">
-													<a href="#" class="btn btn-sm btn-white font-weight-bold">
-													<i class="flaticon2-cube"></i>Settings</a>
-												</div>
-											</div>
-											<div class="separator separator-solid separator-white opacity-20"></div>
-											<div class="card-body text-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.</div>
-										</div>
-										<!--end::Card-->
-										<!--begin::Code example-->
-										<div class="example example-compact mt-2 gutter-b">
-											
-											<div class="example-code">
-												<div class="example-highlight">
-													<pre>
-<code class="language-html">
-
-                </code>
-</pre>
-												</div>
-											</div>
-										</div>
-										<!--end::Code example-->
-										<!--end::Example-->
-										<!--begin::Example-->
-										<!--begin::Card-->
-										<div class="card card-custom bg-success">
-											<div class="card-header border-0">
-												<div class="card-title">
-													<span class="card-icon">
-														<i class="flaticon2-chat-1 text-white"></i>
-													</span>
-													<h3 class="card-label text-white">Success Background Color</h3>
-												</div>
-												<div class="card-toolbar">
-													<a href="#" class="btn btn-sm btn-white font-weight-bold">
-													<i class="flaticon2-cube"></i>Settings</a>
-												</div>
-											</div>
-											<div class="separator separator-solid separator-white opacity-20"></div>
-											<div class="card-body text-white">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.</div>
-										</div>
-										<!--end::Card-->
-										<!--begin::Code example-->
-										<div class="example example-compact mt-2 gutter-b">
-											
-											<div class="example-code">
-												<div class="example-highlight">
-													<pre>
-<code class="language-html">
-                &lt;div class="card card-custom bg-success"&gt;
-                 &lt;div class="card-header border-0"&gt;
-                  &lt;div class="card-title"&gt;
-                            &lt;span class="card-icon"&gt;
-                                &lt;i class="flaticon2-chat-1 text-white"&gt;&lt;/i&gt;
-                            &lt;/span&gt;
-                   &lt;h3 class="card-label text-white"&gt;
-                    Success Background Color
-                   &lt;/h3&gt;
-                  &lt;/div&gt;
-                        &lt;div class="card-toolbar"&gt;
-                            &lt;a href="#" class="btn btn-sm btn-white font-weight-bold"&gt;
-                                &lt;i class="flaticon2-cube"&gt;&lt;/i&gt; Settings
-                            &lt;/a&gt;
-                        &lt;/div&gt;
-                 &lt;/div&gt;
-                    &lt;div class="separator separator-solid separator-white opacity-20"&gt;&lt;/div&gt;
-                 &lt;div class="card-body text-white"&gt;
-                        ...
-                    &lt;/div&gt;
-                &lt;/div&gt;
-                </code>
-</pre>
-												</div>
-											</div>
-										</div>
-										<!--end::Code example-->
-										<!--end::Example-->
+										<!--end::Search Form-->
+										<!--end: Search Form-->
+										<!--begin: Datatable-->
+										<div class="datatable datatable-bordered datatable-head-custom" id="kt_datatable"></div>
+										<!--end: Datatable-->
 									</div>
 								</div>
-								<!--end::Row-->
+								<!--end::Card-->
 							</div>
 							<!--end::Content-->
 						</div>
@@ -4686,13 +4213,7 @@ License: You must have a valid license purchased only from themeforest(the above
 								<a href="http://keenthemes.com/metronic" target="_blank" class="text-white text-hover-primary">Deteksi Konten Hoax Vaksin Covid-19 di Media Sosial</a>
 							</div>
 							<!--end::Copyright-->
-							<!--begin::Nav-->
-							<div class="nav nav-dark order-1 order-md-2">
-								<a href="http://keenthemes.com/metronic" target="_blank" class="nav-link pr-3 pl-0 text-muted text-hover-primary">About</a>
-								<a href="http://keenthemes.com/metronic" target="_blank" class="nav-link px-3 text-muted text-hover-primary">Team</a>
-								<a href="http://keenthemes.com/metronic" target="_blank" class="nav-link pl-3 pr-0 text-muted text-hover-primary">Contact</a>
-							</div>
-							<!--end::Nav-->
+							
 						</div>
 						<!--end::Container-->
 					</div>
@@ -5405,7 +4926,31 @@ License: You must have a valid license purchased only from themeforest(the above
 		</div>
 		<!--end::Scrolltop-->
 		
-		
+		<!--begin::Demo Panel-->
+		<div id="kt_demo_panel" class="offcanvas offcanvas-right p-10">
+			<!--begin::Header-->
+			<div class="offcanvas-header d-flex align-items-center justify-content-between pb-7">
+				<h4 class="font-weight-bold m-0">Select A Demo</h4>
+				<a href="#" class="btn btn-xs btn-icon btn-light btn-hover-primary" id="kt_demo_panel_close">
+					<i class="ki ki-close icon-xs text-muted"></i>
+				</a>
+			</div>
+			<!--end::Header-->
+			
+		</div>
+		<!--end::Demo Panel-->
+		<script>var HOST_URL = "/metronic/theme/html/tools/preview";</script>
+		<!--begin::Global Config(global config for global JS scripts)-->
+		<script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1200 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#8950FC", "secondary": "#E5EAEE", "success": "#1BC5BD", "info": "#6993FF", "warning": "#FFA800", "danger": "#F64E60", "light": "#F3F6F9", "dark": "#212121" }, "light": { "white": "#ffffff", "primary": "#EEE5FF", "secondary": "#ECF0F3", "success": "#C9F7F5", "info": "#E1E9FF", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#212121", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#ECF0F3", "gray-300": "#E5EAEE", "gray-400": "#D6D6E0", "gray-500": "#B5B5C3", "gray-600": "#80808F", "gray-700": "#464E5F", "gray-800": "#1B283F", "gray-900": "#212121" } }, "font-family": "Poppins" };</script>
+		<!--end::Global Config-->
+		<!--begin::Global Theme Bundle(used by all pages)-->
+		<script src="<?php echo base_url() ?>assets/plugins/global/plugins.bundle.js?v=7.2.9"></script>
+		<script src="<?php echo base_url() ?>assets/plugins/custom/prismjs/prismjs.bundle.js?v=7.2.9"></script>
+		<script src="<?php echo base_url() ?>assets/js/scripts.bundle.js?v=7.2.9"></script>
+		<!--end::Global Theme Bundle-->
+		<!--begin::Page Scripts(used by this page)-->
+		<script src="<?php echo base_url() ?>assets/js/pages/crud/ktdatatable/base/data-local.js?v=7.2.9"></script>
+		<!--end::Page Scripts-->
 	</body>
 	<!--end::Body-->
 </html>

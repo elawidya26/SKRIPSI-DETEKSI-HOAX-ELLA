@@ -2814,7 +2814,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									</li>
 									<li class="menu-item menu-item-submenu menu-item-rel" data-menu-toggle="click" aria-haspopup="true">
 										<a href="<?php echo base_url('Uji_user/index') ?>" class="menu-link ">
-											<span class="menu-text">Uji Postingan</span>
+											<span class="menu-text">Uji User</span>
 											<span class="menu-desc"></span>
 											
 										</a>
@@ -4047,31 +4047,8 @@ License: You must have a valid license purchased only from themeforest(the above
 											<!--begin::Form-->
 											<form class="form">
 												<div class="card-body">
-													<h3 class="font-size-lg text-dark font-weight-bold mb-6">1. Informasi Pelapor:</h3>
-													<div class="mb-15">
-														<div class="form-group row">
-															<label class="col-lg-3 col-form-label">Nama Lengkap:</label>
-															<div class="col-lg-6">
-																<input type="email" class="form-control" placeholder="Masukkan nama lengkap" />
-																<span class="form-text text-muted">Silakan masukkan nama lengkap Anda</span>
-															</div>
-														</div>
-														<div class="form-group row">
-															<label class="col-lg-3 col-form-label">Email:</label>
-															<div class="col-lg-6">
-																<input type="email" class="form-control" placeholder="Masukan email" />
-																<span class="form-text text-muted">Kami tidak akan pernah membagikan email Anda kepada orang lain</span>
-															</div>
-														</div>
-                                                        <div class="form-group row">
-															<label class="col-lg-3 col-form-label">Status:</label>
-															<div class="col-lg-6">
-																<input type="email" class="form-control" placeholder="Status anda" />
-																<span class="form-text text-muted">Silakan masukkan status anda saat ini *mahasiswa *masyarakat</span>
-															</div>
-														</div>
-													</div>
-													<h3 class="font-size-lg text-dark font-weight-bold mb-6">2. Informasi Laporan :</h3>
+													
+													<h3 class="font-size-lg text-dark font-weight-bold mb-6">Informasi Laporan :</h3>
 													<div class="mb-3">
                                                     <div class="form-group">
 														<label>Judul:</label>
@@ -4089,17 +4066,7 @@ License: You must have a valid license purchased only from themeforest(the above
 														<span class="form-text text-muted">Silahkan masukkan bukti anda *link *text</span>
 													</div>
 													
-													<div class="form-group">
-														<label>Label :</label>
-														<div class="checkbox-list">
-															<label class="checkbox">
-															<input type="checkbox" />
-															<span></span>Hoax</label>
-															<label class="checkbox">
-															<input type="checkbox" />
-															<span></span>Non-Hoax</label>
-														</div>
-													</div>
+													
                                                     <div class="form-group">
 														<label>Sumber :</label>
 														<div class="checkbox-list">

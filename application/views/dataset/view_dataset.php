@@ -14,17 +14,17 @@
 											<!--end::Svg Icon-->
 										</span>
 									</div>
-									<div class="alert-text">The default page control presented by DataTables (forward and backward buttons with up to 7 page numbers in-between) is fine for most situations. 
-									<br />For more info see 
-									<a class="font-weight-bold" href="https://datatables.net/" target="_blank">the official home</a>of the plugin.</div>
+									<div class="alert-text">
+									<p>The Metronic Datatable supports language translations for the texts and messages. You can either define the texts and messages the respective configuration options as shown in this demo. In this example we showed you spanish translation demo.</p>For more information visit 
+									<a class="font-weight-bold" href="https://keenthemes.com/metronic/?page=docs&amp;section=html/components/datatable" target="_blank">Metronic KTDatatable Documentation</a>.</div>
 								</div>
 								<!--end::Notice-->
 								<!--begin::Card-->
 								<div class="card card-custom">
-									<div class="card-header flex-wrap py-5">
+									<div class="card-header flex-wrap border-0 pt-6 pb-0">
 										<div class="card-title">
-											<h3 class="card-label">Paginations 
-											<span class="d-block text-muted pt-2 font-size-sm">extended pagination options</span></h3>
+											<h3 class="card-label">Spanish Translation 
+											<span class="d-block text-muted pt-2 font-size-sm">Language translations for the texts and messages</span></h3>
 										</div>
 										<div class="card-toolbar">
 											<!--begin::Dropdown-->
@@ -109,74 +109,58 @@
 										</div>
 									</div>
 									<div class="card-body">
+										<!--begin: Search Form-->
+										<!--begin::Search Form-->
+										<div class="mb-7">
+											<div class="row align-items-center">
+												<div class="col-lg-9 col-xl-8">
+													<div class="row align-items-center">
+														<div class="col-md-4 my-2 my-md-0">
+															<div class="input-icon">
+																<input type="text" class="form-control" placeholder="Search..." id="kt_datatable_search_query" />
+																<span>
+																	<i class="flaticon2-search-1 text-muted"></i>
+																</span>
+															</div>
+														</div>
+														<div class="col-md-4 my-2 my-md-0">
+															<div class="d-flex align-items-center">
+																<label class="mr-3 mb-0 d-none d-md-block">Status:</label>
+																<select class="form-control" id="kt_datatable_search_status">
+																	<option value="">All</option>
+																	<option value="1">Pending</option>
+																	<option value="2">Delivered</option>
+																	<option value="3">Canceled</option>
+																	<option value="4">Success</option>
+																	<option value="5">Info</option>
+																	<option value="6">Danger</option>
+																</select>
+															</div>
+														</div>
+														<div class="col-md-4 my-2 my-md-0">
+															<div class="d-flex align-items-center">
+																<label class="mr-3 mb-0 d-none d-md-block">Type:</label>
+																<select class="form-control" id="kt_datatable_search_type">
+																	<option value="">All</option>
+																	<option value="1">Online</option>
+																	<option value="2">Retail</option>
+																	<option value="3">Direct</option>
+																</select>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-3 col-xl-4 mt-5 mt-lg-0">
+													<a href="#" class="btn btn-light-primary px-6 font-weight-bold">Search</a>
+												</div>
+											</div>
+										</div>
+										<!--end::Search Form-->
+										<!--end: Search Form-->
 										<!--begin: Datatable-->
-										<table class="table table-separate table-head-custom table-checkable" id="kt_datatable">
-											<thead>
-												<tr>
-													<th>id_lapor_hoax</th>
-													<th>judul</th>
-													<th>isi</th>
-													<th>label</th>
-													<th>sumber</th>
-													<th>bukti</th>
-													<th>nama</th>
-													<th>email</th>
-													<th>status</th>
-													<th>created_at</th>
-													<th>updated_at</th>
-													
-													<th>Actions</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>1</td>
-													<td>64616-103</td>
-													<td>Brazil</td>
-													<td>São Félix do Xingu</td>
-													<td>foto</td>
-													<td>698 Oriole Pass</td>
-													<td>Hayes Boule</td>
-													<td>São Félix do Xingu</td>
-													<td>foto</td>
-													<td>698 Oriole Pass</td>
-													<td>Hayes Boule</td>
-													<td nowrap="nowrap"></td>
-												</tr>
-												<tr>
-													<td>2</td>
-													<td>54868-3377</td>
-													<td>Vietnam</td>
-													<td>Bình Minh</td>
-													<td>foto</td>
-													<td>8998 Delaware Court</td>
-													<td>Humbert Bresnen</td>
-													<td>São Félix do Xingu</td>
-													<td>foto</td>
-													<td>698 Oriole Pass</td>
-													<td>Hayes Boule</td>
-													<td nowrap="nowrap"></td>
-												</tr>
-												<tr>
-													<td>3</td>
-													<td>0998-0355</td>
-													<td>Philippines</td>
-													<td>Palagao Norte</td>
-													<td>foto</td>
-													<td>91796 Sutteridge Road</td>
-													<td>Jareb Labro</td>
-													<td>São Félix do Xingu</td>
-													<td>foto</td>
-													<td>698 Oriole Pass</td>
-													<td>Hayes Boule</td>
-													<td nowrap="nowrap"></td>
-												</tr>
-												
-											</tbody>
-										</table>
+										<div class="datatable datatable-bordered datatable-head-custom" id="kt_datatable"></div>
 										<!--end: Datatable-->
 									</div>
 								</div>
 								<!--end::Card-->
 							</div>
-							<!--end::Content-->

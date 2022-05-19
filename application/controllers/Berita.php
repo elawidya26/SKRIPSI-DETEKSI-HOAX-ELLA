@@ -17,4 +17,4 @@
     
     }
     
-    /* End of file Login.php */
+    /* End of file Berita.php */

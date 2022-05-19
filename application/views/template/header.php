@@ -1003,19 +1003,19 @@ License: You must have a valid license purchased only from themeforest(the above
 								<!--begin::Header Nav-->
 								<ul class="menu-nav">
 									<li class="menu-item menu-item-here">
-										<a href="<?php echo base_url('dashboard') ?>" class="menu-link">
+										<a href="<?php echo base_url('Dashboard/index') ?>" class="menu-link">
 											<span class="menu-text">Dashboard</span>
 										</a>
 									</li>
 									
                                     <li class="menu-item">
-										<a href="<?php echo base_url('welcome/index') ?>" class="menu-link">
+										<a href="<?php echo base_url('Dataset/index') ?>" class="menu-link">
 											<span class="menu-text">Dataset</span>
 										</a>
 									</li>
                                     
                                     <li class="menu-item  ">
-										<a href="<?php echo base_url('welcome/index') ?>" class="menu-link">
+										<a href="<?php echo base_url('Preprocessing/index') ?>" class="menu-link">
 											<span class="menu-text">Preprocessing</span>
 										</a>
 									</li>
@@ -1034,8 +1034,13 @@ License: You must have a valid license purchased only from themeforest(the above
 									</li>
                                     
                                     <li class="menu-item  ">
-										<a href="<?php echo base_url('welcome/index') ?>" class="menu-link">
+										<a href="<?php echo base_url('Lapor_hoax/index') ?>" class="menu-link">
 											<span class="menu-text">Laporan Hoax</span>
+										</a>
+									</li>
+									<li class="menu-item  ">
+										<a href="<?php echo base_url('Profile/index') ?>" class="menu-link">
+											<span class="menu-text">Profile</span>
 										</a>
 									</li>
 
