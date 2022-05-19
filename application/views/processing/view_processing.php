@@ -15,7 +15,7 @@
 										</span>
 									</div>
 									<div class="alert-text">
-									<p>dataset yang bersumber dari data postingan twitter dan data dari website turnbackhoax.id yang disimpan dalam bentuk excel. Pengambilan data dari twitter dengan menggunakan proses crawling. Proses crawling tersebut menggunakan library tweepy dari bahasa pemrograman Python, library ini berfungsi untuk mengambil data postingan pada twitter dengan menggunakan API Key yang didapatkan dari akun developer twitter. Sedangkan, data dari website turnbackhoax.id diambil menggunakan teknik scraping data . Dataset ini diambil pada rentang waktu tertentu dengan kata kunci #vaksincovid19.</p> 
+									<p> Preprocessing merupakan suatu proses pengubahan bentuk data teks yang tidak terstruktur sebagai bentuk yang terstruktur sesuai menggunakan kebutuhannya. Pada sistem yang dibangun, ada 5 tahap preprocessing yaitu Pertama Case Folding, Normalization , Tokenizing, Filtering , dan Stemming.</p>
 									</div>
 								</div>
 								<!--end::Notice-->
@@ -23,8 +23,8 @@
 								<div class="card card-custom">
 									<div class="card-header flex-wrap border-0 pt-6 pb-0">
 										<div class="card-title">
-											<h3 class="card-label">Tabel Dataset 
-											<span class="d-block text-muted pt-2 font-size-sm">Hasil data crawling dan scraping</span></h3>
+											<h3 class="card-label">Tabel Processing 
+											<span class="d-block text-muted pt-2 font-size-sm">Hasil dari processing yang telah diolah preprocessing</span></h3>
 										</div>
 										<div class="card-toolbar">
 											<!--begin::Dropdown-->
@@ -93,7 +93,7 @@
 											</div>
 											<!--end::Dropdown-->
 											<!--begin::Button-->
-											<a href="<?php echo base_url('dataset/tambah') ?>" class="btn btn-primary font-weight-bolder">
+											<a href="<?php echo base_url('preprocessing/tambah') ?>" class="btn btn-primary font-weight-bolder">
 											<span class="svg-icon svg-icon-md">
 												<!--begin::Svg Icon | path:/metronic/theme/html/demo8/dist/assets/media/svg/icons/Design/Flatten.svg-->
 												<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -153,12 +153,8 @@
 											<thead>
 												<tr>
 													<th title="Field #1">No</th>
-													<th title="Field #2">Penulis</th>
-													<th title="Field #3">Isi</th>
-													<th title="Field #4">Tanggal</th>
-													<th title="Field #5">Sumber</th>
-													<th title="Field #6">Label</th>
-													
+													<th title="Field #2">Label Actual</th>
+													<th title="Field #3">Label Predict</th>
 													<th title="Field #8">Opsi</th>
 												</tr>
 											</thead>
@@ -166,13 +162,25 @@
 												<?php 
 												
 												
-												foreach ( $dataset->result_array() AS $num => $ds ) : ?>
+												foreach ( $preprocessing->result_array() AS $num => $ds ) : ?>
 												<tr>
 													<td><?php echo $num + 1 ?></td>
-													<td><?php echo $ds['penulis'] ?></td>
-													<td><?php echo $ds['isi'] ?></td>
-													<td><?php echo $ds['tanggal_dataset'] ?></td>
-													<td><?php echo $ds['sumber'] ?></td>
+													<td><?php echo $ds['label_actual'] ?></td>
+													
+													<td><?php 
+													
+														if ( $ds['label'] == "TRUE" ) {
+
+
+															echo '<span class="label label-light-success label-pill label-inline">TRUE</span>';
+														} else {
+
+															echo '<span class="label label-light-danger label-pill label-inline">FAKE</span>';
+														}
+													
+													?></td>
+                                                    <td><?php echo $ds['label_predict'] ?></td>
+													
 													<td><?php 
 													
 														if ( $ds['label'] == "TRUE" ) {
@@ -186,8 +194,8 @@
 													
 													?></td>
 													<td>
-														<a href="<?php echo base_url('dataset/proseshapus/'. $ds['id_dataset']) ?>" onclick="return confirm('Apakah anda yakin ingin menghapus dataset ini ?')" class="btn btn-sm btn-danger">Hapus</a>
-														<a href="<?php echo base_url('dataset/update/'. $ds['id_dataset']) ?>" class="btn btn-sm btn-warning">Update</a>
+														<a href="<?php echo base_url('preprocessing/proseshapus/'. $ds['id_preprocessing']) ?>" onclick="return confirm('Apakah anda yakin ingin menghapus preprocessing ini ?')" class="btn btn-sm btn-danger">Hapus</a>
+														<a href="<?php echo base_url('preprocessing/update/'. $ds['id_preprocessing']) ?>" class="btn btn-sm btn-warning">Update</a>
 													</td>
 												</tr>
 												<?php endforeach; ?>

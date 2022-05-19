@@ -14,17 +14,17 @@
 											<!--end::Svg Icon-->
 										</span>
 									</div>
-									<div class="alert-text">The default page control presented by DataTables (forward and backward buttons with up to 7 page numbers in-between) is fine for most situations. 
-									<br />For more info see 
-									<a class="font-weight-bold" href="https://datatables.net/" target="_blank">the official home</a>of the plugin.</div>
+									<div class="alert-text">
+									<p>The Metronic Datatable component supports initialization from HTML table. It also defines the schema model of the data source. In addition to the visualization, the Datatable provides built-in support for operations over data such as sorting, filtering and paging performed in user browser (frontend).</p>For more information visit 
+									<a class="font-weight-bold" href="https://keenthemes.com/metronic/?page=docs&amp;section=html/components/datatable" target="_blank">Metronic KTDatatable Documentation</a>.</div>
 								</div>
 								<!--end::Notice-->
 								<!--begin::Card-->
 								<div class="card card-custom">
-									<div class="card-header flex-wrap py-5">
+									<div class="card-header flex-wrap border-0 pt-6 pb-0">
 										<div class="card-title">
-											<h3 class="card-label">Paginations 
-											<span class="d-block text-muted pt-2 font-size-sm">extended pagination options</span></h3>
+											<h3 class="card-label">HTML Table 
+											<span class="d-block text-muted pt-2 font-size-sm">Datatable initialized from HTML table</span></h3>
 										</div>
 										<div class="card-toolbar">
 											<!--begin::Dropdown-->
@@ -93,7 +93,7 @@
 											</div>
 											<!--end::Dropdown-->
 											<!--begin::Button-->
-											<a href="#" class="btn btn-primary font-weight-bolder">
+											<a href="<?php echo base_url('profile/tambah') ?>" class="btn btn-primary font-weight-bolder">
 											<span class="svg-icon svg-icon-md">
 												<!--begin::Svg Icon | path:/metronic/theme/html/demo8/dist/assets/media/svg/icons/Design/Flatten.svg-->
 												<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -101,63 +101,76 @@
 														<rect x="0" y="0" width="24" height="24" />
 														<circle fill="#000000" cx="9" cy="15" r="6" />
 														<path d="M8.8012943,7.00241953 C9.83837775,5.20768121 11.7781543,4 14,4 C17.3137085,4 20,6.6862915 20,10 C20,12.2218457 18.7923188,14.1616223 16.9975805,15.1987057 C16.9991904,15.1326658 17,15.0664274 17,15 C17,10.581722 13.418278,7 9,7 C8.93357256,7 8.86733422,7.00080962 8.8012943,7.00241953 Z" fill="#000000" opacity="0.3" />
+													
 													</g>
+													
 												</svg>
 												<!--end::Svg Icon-->
-											</span>New Record</a>
+
+											</span>Tambah Data</a>
+											
 											<!--end::Button-->
 										</div>
 									</div>
 									<div class="card-body">
+										<!--begin: Search Form-->
+										<!--begin::Search Form-->
+										<div class="mb-7">
+											<div class="row align-items-center">
+												<div class="col-lg-9 col-xl-8">
+													<div class="row align-items-center">
+														<div class="col-md-4 my-2 my-md-0">
+															<div class="input-icon">
+																<input type="text" class="form-control" placeholder="Search..." id="kt_datatable_search_query" />
+																<span>
+																	<i class="flaticon2-search-1 text-muted"></i>
+																</span>
+															</div>
+														</div>
+														
+														
+													</div>
+												</div>
+												<div class="col-lg-3 col-xl-4 mt-5 mt-lg-0">
+													<a href="#" class="btn btn-light-primary px-6 font-weight-bold">Search</a>
+												</div>
+											</div>
+										</div>
+										<!--end::Search Form-->
+										<!--end: Search Form-->
 										<!--begin: Datatable-->
-										<table class="table table-separate table-head-custom table-checkable" id="kt_datatable">
+										<table class="table table-stripe">
 											<thead>
 												<tr>
-													<th>id_profile</th>
-													<th>username</th>
-													<th>password</th>
-													<th>nama</th>
-													<th>foto</th>
-													<th>created_at</th>
-													<th>updated_at</th>
+													<th title="Field #1">No</th>
+													<th title="Field #2">username</th>
+													<th title="Field #3">password</th>
+													<th title="Field #4">nama</th>
+													<th title="Field #5">foto</th>
 													
-													<th>Actions</th>
+													
+													<th title="Field #6">Opsi</th>
 												</tr>
 											</thead>
 											<tbody>
-												<tr>
-													<td>1</td>
-													<td>64616-103</td>
-													<td>Brazil</td>
-													<td>São Félix do Xingu</td>
-													<td>foto</td>
-													<td>698 Oriole Pass</td>
-													<td>Hayes Boule</td>
-													<td nowrap="nowrap"></td>
-												</tr>
-												<tr>
-													<td>2</td>
-													<td>54868-3377</td>
-													<td>Vietnam</td>
-													<td>Bình Minh</td>
-													<td>foto</td>
-													<td>8998 Delaware Court</td>
-													<td>Humbert Bresnen</td>
-													
-													<td nowrap="nowrap"></td>
-												</tr>
-												<tr>
-													<td>3</td>
-													<td>0998-0355</td>
-													<td>Philippines</td>
-													<td>Palagao Norte</td>
-													<td>foto</td>
-													<td>91796 Sutteridge Road</td>
-													<td>Jareb Labro</td>
-													
-													<td nowrap="nowrap"></td>
-												</tr>
+												<?php 
 												
+												
+												foreach ( $profile->result_array() AS $num => $ds ) : ?>
+												<tr>
+													<td><?php echo $num + 1 ?></td>
+													<td><?php echo $ds['username'] ?></td>
+													<td><?php echo $ds['password'] ?></td>
+													<td><?php echo $ds['nama'] ?></td>
+													<td><?php echo $ds['foto'] ?></td>
+													
+													
+													<td>
+														<a href="<?php echo base_url('profile/proseshapus/'. $ds['id_profile']) ?>" onclick="return confirm('Apakah anda yakin ingin menghapus profile ini ?')" class="btn btn-sm btn-danger">Hapus</a>
+														<a href="<?php echo base_url('profile/update/'. $ds['id_profile']) ?>" class="btn btn-sm btn-warning">Update</a>
+													</td>
+												</tr>
+												<?php endforeach; ?>
 											</tbody>
 										</table>
 										<!--end: Datatable-->
@@ -165,4 +178,3 @@
 								</div>
 								<!--end::Card-->
 							</div>
-							<!--end::Content-->
