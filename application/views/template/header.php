@@ -1002,14 +1002,15 @@ License: You must have a valid license purchased only from themeforest(the above
 							<div id="kt_header_menu" class="header-menu header-menu-left header-menu-mobile header-menu-layout-default header-menu-root-arrow">
 								<!--begin::Header Nav-->
 								<ul class="menu-nav">
-									<li class="menu-item menu-item-here">
-										<a href="<?php echo base_url('Dashboard/index') ?>" class="menu-link">
+									<?php $uri = $this->uri->segment(1); ?>
+									<li class="menu-item <?php if ( $uri == "dashboard" ) echo 'menu-item-here'; ?>">
+										<a href="<?php echo base_url('dashboard/index') ?>" class="menu-link">
 											<span class="menu-text">Dashboard</span>
 										</a>
 									</li>
 									
-                                    <li class="menu-item">
-										<a href="<?php echo base_url('Dataset/index') ?>" class="menu-link">
+                                    <li class="menu-item <?php if ( $uri == "dataset" ) echo 'menu-item-here'; ?>">
+										<a href="<?php echo base_url('dataset/index') ?>" class="menu-link">
 											<span class="menu-text">Dataset</span>
 										</a>
 									</li>

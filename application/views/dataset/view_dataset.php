@@ -15,7 +15,7 @@
 										</span>
 									</div>
 									<div class="alert-text">
-									<p>The Metronic Datatable supports language translations for the texts and messages. You can either define the texts and messages the respective configuration options as shown in this demo. In this example we showed you spanish translation demo.</p>For more information visit 
+									<p>The Metronic Datatable component supports initialization from HTML table. It also defines the schema model of the data source. In addition to the visualization, the Datatable provides built-in support for operations over data such as sorting, filtering and paging performed in user browser (frontend).</p>For more information visit 
 									<a class="font-weight-bold" href="https://keenthemes.com/metronic/?page=docs&amp;section=html/components/datatable" target="_blank">Metronic KTDatatable Documentation</a>.</div>
 								</div>
 								<!--end::Notice-->
@@ -23,8 +23,8 @@
 								<div class="card card-custom">
 									<div class="card-header flex-wrap border-0 pt-6 pb-0">
 										<div class="card-title">
-											<h3 class="card-label">Spanish Translation 
-											<span class="d-block text-muted pt-2 font-size-sm">Language translations for the texts and messages</span></h3>
+											<h3 class="card-label">HTML Table 
+											<span class="d-block text-muted pt-2 font-size-sm">Datatable initialized from HTML table</span></h3>
 										</div>
 										<div class="card-toolbar">
 											<!--begin::Dropdown-->
@@ -158,7 +158,50 @@
 										<!--end::Search Form-->
 										<!--end: Search Form-->
 										<!--begin: Datatable-->
-										<div class="datatable datatable-bordered datatable-head-custom" id="kt_datatable"></div>
+										<table class="table table-stripe">
+											<thead>
+												<tr>
+													<th title="Field #1">No</th>
+													<th title="Field #2">Penulis</th>
+													<th title="Field #3">Isi</th>
+													<th title="Field #4">Tanggal</th>
+													<th title="Field #5">Sumber</th>
+													<th title="Field #6">Label</th>
+													
+													<th title="Field #8">Opsi</th>
+												</tr>
+											</thead>
+											<tbody>
+												<?php 
+												
+												
+												foreach ( $dataset->result_array() AS $num => $ds ) : ?>
+												<tr>
+													<td><?php echo $num + 1 ?></td>
+													<td><?php echo $ds['penulis'] ?></td>
+													<td><?php echo $ds['isi'] ?></td>
+													<td><?php echo $ds['tanggal_dataset'] ?></td>
+													<td><?php echo $ds['sumber'] ?></td>
+													<td><?php 
+													
+														if ( $ds['label'] == "TRUE" ) {
+
+
+															echo '<span class="label label-light-success label-pill label-inline">TRUE</span>';
+														} else {
+
+															echo '<span class="label label-light-danger label-pill label-inline">FAKE</span>';
+														}
+													
+													?></td>
+													<td>
+														<a href="<?php echo base_url('dataset/proseshapus/'. $ds['id_dataset']) ?>" onclick="return confirm('Apakah anda yakin ingin menghapus dataset ini ?')" class="btn btn-sm btn-danger">Hapus</a>
+														<a href="<?php echo base_url('dataset/update/'. $ds['id_dataset']) ?>" class="btn btn-sm btn-warning">Update</a>
+													</td>
+												</tr>
+												<?php endforeach; ?>
+											</tbody>
+										</table>
 										<!--end: Datatable-->
 									</div>
 								</div>

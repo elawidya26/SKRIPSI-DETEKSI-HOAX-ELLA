@@ -9,17 +9,89 @@
 
             parent::__construct();
 
-            
+            // load model
+            $this->load->model('M_dataset');
         }
 
         public function index(){
 
+
+            $data['dataset'] = $this->M_dataset->get();
+
             $this->load->view('template/header');
 
-            $this->load->view('dataset/view_dataset');
+            $this->load->view('dataset/view_dataset', $data);
 
             $this->load->view('template/footer');
         }    
+
+
+
+
+        // view tambah dataset
+        public function tambah() {
+
+            $this->load->view('template/header');
+
+            $this->load->view('dataset/view_dataset_tambah');
+
+            $this->load->view('template/footer');
+        }
+
+
+        // proses tambah
+        public function prosestambah() {
+
+            $tabel_dataset = array(
+
+                'penulis'           => $this->input->post('penulis'),
+                'isi'               => $this->input->post('isi'),
+                'tanggal_dataset'   => $this->input->post('tanggal'),
+                'sumber'            => $this->input->post('sumber'),
+                'label'             => $this->input->post('label'),
+            );
+
+            $this->M_dataset->insert($tabel_dataset);
+            redirect('dataset/index');
+
+        }
+
+
+        public function proseshapus( $id_dataset ) {
+
+            $this->M_dataset->delete($id_dataset);
+            redirect('dataset/index');
+        }
+
+
+
+
+        // view update
+        public function update( $id_dataset ) {
+
+            $data['dataset'] = $this->M_dataset->getSpecificData( $id_dataset )->row_array();
+
+            $this->load->view('template/header');
+
+            $this->load->view('dataset/view_dataset_update', $data);
+
+            $this->load->view('template/footer');
+        }
+        
+        public function prosesupdate( $id_dataset ) {
+
+            $tabel_dataset = array(
+
+                'penulis'           => $this->input->post('penulis'),
+                'isi'               => $this->input->post('isi'),
+                'tanggal_dataset'   => $this->input->post('tanggal'),
+                'sumber'            => $this->input->post('sumber'),
+                'label'             => $this->input->post('label'),
+            );
+
+            $this->M_dataset->update($id_dataset, $tabel_dataset);
+            redirect('dataset/index');
+        }
     }
     
     /* End of file Dashboard.php */
