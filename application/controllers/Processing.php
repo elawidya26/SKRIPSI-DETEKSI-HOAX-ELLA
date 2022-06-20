@@ -16,12 +16,19 @@
         public function index(){
 
 
-            $data['processing'] = $this->M_processing->get();
+            $data = array();
 
+            $training = $this->input->get('training');
+            $testing = $this->input->get('testing');
+            $threshold = $this->input->get('threshold');
+            $fold = $this->input->get('fold');
+
+
+            $data['result'] = $this->komputasi();
+
+            // print_r( $data );
             $this->load->view('template/header');
-
             $this->load->view('processing/view_processing', $data);
-
             $this->load->view('template/footer');
         }    
 
@@ -86,6 +93,100 @@
 
             $this->M_processing->update($id_processing, $tabel_processing);
             redirect('processing/index');
+        }
+
+
+
+        public function komputasi() {
+
+            // input get
+            $threshold = $this->input->get('threshold');
+            $training = $this->input->get('training');
+            $testing = $this->input->get('testing');
+            $fold = $this->input->get('fold');
+
+
+            $api = "http://127.0.0.1:5000/processing?threshold=" . $threshold . "&training=" . $training . "&testing=". $testing;
+
+            $file = file_get_contents( $api );
+            $decode = json_decode( $file );
+
+            
+            
+
+            // print_r( $decode );
+
+            // echo '<hr>';
+
+            if ( $decode->status ) {
+
+
+                $data = array();
+
+                // header('Content-type: application/json');
+        
+                $data_json_stripe = stripslashes( $decode->data );
+                $data_decode = json_decode( $data_json_stripe );
+
+                // print_r( $data_decode );
+
+                // echo '<hr><hr>';
+
+                $total_acc = [];
+                $total_precision = [];
+                $total_recall = [];
+
+                foreach ( $data_decode AS $isi){
+
+                    $kfold = $isi->kfold;
+                    $akurasi = $isi->akurasi;
+                    $recall = $isi->classification_report->TRUE->recall;
+                    $precision = $isi->classification_report->TRUE->precision;
+
+
+                    $total_acc[] = $akurasi;
+                    $total_precision[] = $precision;
+                    $total_recall[] = $recall;
+                    
+                    // data model 
+                    $dt_model = array();
+                    foreach ( $isi->model AS $mdl ) {
+
+                        array_push( $dt_model, array(
+
+                            'text'      => $mdl->text,
+                            'actual'    => $mdl->actual,
+                            'predict'    => $mdl->predict,
+                        ) );
+                    }
+
+
+                    array_push( $data, array(
+
+                        'kfold'     => $kfold,
+                        'akurasi'   => $akurasi,
+                        'recall'    => $recall,
+                        'precision' => $precision,
+                        'model' => $dt_model
+                    ) );
+
+                }
+
+
+                return [
+
+                    'data'  => $data,
+                    'avg_acc'   => array_sum($total_acc)/count($total_acc),
+                    'avg_precision'   => array_sum($total_precision)/count($total_precision),
+                    'avg_recall'   => array_sum($total_recall)/count($total_recall),
+
+                ];
+
+            } else {
+
+                return []; // empty
+                // echo "Crawling gagal !";
+            }
         }
     }
     

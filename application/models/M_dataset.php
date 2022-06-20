@@ -30,6 +30,13 @@
         }
 
 
+
+        // insert batch
+        public function insert_batch( $data ) {
+
+            $this->db->insert_batch( $this->table, $data );
+        }
+
         public function delete( $id_dataset ) {
 
             $this->db->where( $this->primaryKey, $id_dataset );

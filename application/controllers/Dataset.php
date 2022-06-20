@@ -72,9 +72,7 @@
             $data['dataset'] = $this->M_dataset->getSpecificData( $id_dataset )->row_array();
 
             $this->load->view('template/header');
-
             $this->load->view('dataset/view_dataset_update', $data);
-
             $this->load->view('template/footer');
         }
         
@@ -91,6 +89,60 @@
 
             $this->M_dataset->update($id_dataset, $tabel_dataset);
             redirect('dataset/index');
+        }
+
+
+
+
+
+
+
+
+
+        public function crawling() {
+
+            $this->load->view('template/header');
+            $this->load->view('dataset/view_crawling_tambah');
+            $this->load->view('template/footer');
+        }
+
+
+        public function prosescrawling(){
+
+            $api = "http://127.0.0.1:5000/crawling";
+
+            $file = file_get_contents( $api );
+            $decode = json_decode( $file );
+
+            if ( $decode->status ) {
+
+
+                $data = array();
+
+                foreach ( $decode->data AS $isi){
+
+                    array_push( $data, array(
+
+                        'penulis'   => $isi->username,
+                        'isi'       => $isi->text,
+                        'tanggal_dataset'   => date('Y-m-d', strtotime($isi->date)),
+                        'label' => ""
+                    ) );
+                }
+
+
+                // insert to db
+                $this->M_dataset->insert_batch( $data );
+
+
+                redirect('dataset/index');
+
+            } else {
+
+                echo "Crawling gagal !";
+            }
+            
+
         }
     }
     

@@ -19,7 +19,7 @@
         public function getSpecificData( $id_preprocessing, $id_dataset ) {
 
             $this->db->where( $this->primaryKey, $id_preprocessing );
-            $this->db->join( $this->foreignKey, $id_dataset );
+            // $this->db->join( $this->foreignKey, $id_dataset );
             return $this->db->get( $this->table );
         } 
 
@@ -36,6 +36,13 @@
             $this->db->where( $this->primaryKey, $id_preprocessing );
             $this->db->join( $this->foreignKey, $id_dataset );
             $this->db->delete( $this->table );
+        }
+
+
+        // insert batch
+        public function insert_batch( $data ) {
+
+            $this->db->insert_batch( $this->table, $data );
         }
 
 
