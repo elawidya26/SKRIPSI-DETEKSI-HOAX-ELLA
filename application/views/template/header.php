@@ -28,7 +28,7 @@ Renew Support: https://1.envato.market/EA4JP
 License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
 -->
 <html lang="en">
-	<!--begin::Head-->
+	<!--begin::Head ella-->
 	<head>
 		
 		<meta charset="utf-8" />
