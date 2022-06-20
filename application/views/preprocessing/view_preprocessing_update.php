@@ -16,7 +16,7 @@
 
                                                     <div class="form-group">
                                                         <label for="">hasil</label>
-                                                        <input type="text" name="hasil" class="form-control" placeholder=". . ." required="" />
+                                                        <input type="text" name="hasil" class="form-control" value="<?php echo $preprocessing['hasil'] ?>" placeholder=". . ." required="" />
                                                         <small>Masukkan hasil</small>
                                                     </div>
                                                     
