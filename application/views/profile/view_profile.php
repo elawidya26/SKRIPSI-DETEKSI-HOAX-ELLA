@@ -15,8 +15,8 @@
 										</span>
 									</div>
 									<div class="alert-text">
-									<p>The Metronic Datatable component supports initialization from HTML table. It also defines the schema model of the data source. In addition to the visualization, the Datatable provides built-in support for operations over data such as sorting, filtering and paging performed in user browser (frontend).</p>For more information visit 
-									<a class="font-weight-bold" href="https://keenthemes.com/metronic/?page=docs&amp;section=html/components/datatable" target="_blank">Metronic KTDatatable Documentation</a>.</div>
+									<p>Halaman ini untuk halaman profil sendiri pada umumnya berisi konten dari profil si pengguna yang terdiri dari gambar profil/foto, username, nama, pengaturan sandi dan konfigirasi lain tergantung dari layanan yang disediakan website tersebut.</p> 
+									<!--<a class="font-weight-bold" href="https://keenthemes.com/metronic/?page=docs&amp;section=html/components/datatable" target="_blank">Metronic KTDatatable Documentation</a>.--></div>
 								</div>
 								<!--end::Notice-->
 								<!--begin::Card-->

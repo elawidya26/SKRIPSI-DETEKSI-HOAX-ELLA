@@ -97,7 +97,8 @@
             $new_password = "ella";
             echo password_hash( $new_password, PASSWORD_BCRYPT );
         }
-    
+        
+        
     }
     
     /* End of file Login.php */
