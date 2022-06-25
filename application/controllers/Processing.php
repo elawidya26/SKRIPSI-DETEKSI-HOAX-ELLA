@@ -15,18 +15,8 @@
 
         public function index(){
 
-
-            $data = array();
-
-            $training = $this->input->get('training');
-            $testing = $this->input->get('testing');
-            $threshold = $this->input->get('threshold');
-            $fold = $this->input->get('fold');
-
-
             $data['result'] = $this->komputasi();
-
-            // print_r( $data );
+            
             $this->load->view('template/header');
             $this->load->view('processing/view_processing', $data);
             $this->load->view('template/footer');
@@ -106,87 +96,97 @@
             $fold = $this->input->get('fold');
 
 
-            $api = "http://127.0.0.1:5000/processing?threshold=" . $threshold . "&training=" . $training . "&testing=". $testing;
+            $api = "http://127.0.0.1:5000/processing?threshold=" . $threshold . "&training=" . $training . "&testing=". $testing ."&fold=". $fold;
 
-            $file = file_get_contents( $api );
-            $decode = json_decode( $file );
-
+            // header('Content-Type: application/json; charset=utf-8');
             
-            
-
-            // print_r( $decode );
-
-            // echo '<hr>';
-
-            if ( $decode->status ) {
+            $headers = get_headers($api);
+            $res = substr($headers[0], 9, 3);
 
 
-                $data = array();
+            if( empty( $threshold ) ) return [];
 
-                // header('Content-type: application/json');
-        
-                $data_json_stripe = stripslashes( $decode->data );
-                $data_decode = json_decode( $data_json_stripe );
+            if ( $res != 200 ) {
 
-                // print_r( $data_decode );
+                return []; // empty
 
-                // echo '<hr><hr>';
-
-                $total_acc = [];
-                $total_precision = [];
-                $total_recall = [];
-
-                foreach ( $data_decode AS $isi){
-
-                    $kfold = $isi->kfold;
-                    $akurasi = $isi->akurasi;
-                    $recall = $isi->classification_report->TRUE->recall;
-                    $precision = $isi->classification_report->TRUE->precision;
-
-
-                    $total_acc[] = $akurasi;
-                    $total_precision[] = $precision;
-                    $total_recall[] = $recall;
-                    
-                    // data model 
-                    $dt_model = array();
-                    foreach ( $isi->model AS $mdl ) {
-
-                        array_push( $dt_model, array(
-
-                            'text'      => $mdl->text,
-                            'actual'    => $mdl->actual,
-                            'predict'    => $mdl->predict,
-                        ) );
-                    }
-
-
-                    array_push( $data, array(
-
-                        'kfold'     => $kfold,
-                        'akurasi'   => $akurasi,
-                        'recall'    => $recall,
-                        'precision' => $precision,
-                        'model' => $dt_model
-                    ) );
-
-                }
-
-
-                return [
-
-                    'data'  => $data,
-                    'avg_acc'   => array_sum($total_acc)/count($total_acc),
-                    'avg_precision'   => array_sum($total_precision)/count($total_precision),
-                    'avg_recall'   => array_sum($total_recall)/count($total_recall),
-
-                ];
 
             } else {
 
-                return []; // empty
-                // echo "Crawling gagal !";
+                $file = file_get_contents( $api );
+                $decode = json_decode( $file );
+
+
+                if ( $decode->status ) {
+
+
+                    $data = array();
+    
+                    // header('Content-type: application/json');
+            
+                    $data_json_stripe = stripslashes( $decode->data );
+                    $data_decode = json_decode( $data_json_stripe );
+    
+                    // print_r( $data_decode );
+    
+                    // echo '<hr><hr>';
+    
+                    $total_acc = [];
+                    $total_precision = [];
+                    $total_recall = [];
+    
+                    foreach ( $data_decode AS $isi){
+    
+                        $kfold = $isi->kfold;
+                        $akurasi = $isi->akurasi;
+                        // $recall = $isi->classification_report->TRUE->recall;
+                        // $precision = $isi->classification_report->TRUE->precision;
+    
+    
+                        $total_acc[] = $akurasi;
+                        $total_precision[] = $isi->precision;
+                        $total_recall[] = $isi->recall;
+                        
+                        // data model 
+                        $dt_model = array();
+                        foreach ( $isi->model AS $mdl ) {
+    
+                            array_push( $dt_model, array(
+    
+                                'text'      => $mdl->text,
+                                'actual'    => $mdl->actual,
+                                'predict'    => $mdl->predict,
+                            ) );
+                        }
+    
+    
+                        array_push( $data, array(
+    
+                            'kfold'     => $kfold,
+                            'akurasi'   => $akurasi,
+                            'model'     => $dt_model
+                        ) );
+    
+                    }
+    
+    
+                    return [
+    
+                        'data'  => $data,
+                        'avg_acc'   => array_sum($total_acc)/count($total_acc),
+                        'avg_precision'   => array_sum($total_precision)/count($total_precision),
+                        'avg_recall'   => array_sum($total_recall)/count($total_recall),
+    
+                    ];
+    
+                } else {
+    
+                    return []; // empty
+                    // echo "Crawling gagal !";
+                }
             }
+
+           
         }
     }
     

@@ -12,7 +12,7 @@
 
                                                 <h4>Form profile</h4>
 
-                                                <form action="<?php echo base_url('profile/prosesupdate/'. $profile['id_profile']) ?>" method="POST">
+                                                <form action="<?php echo base_url('profile/prosesupdate/'. $profile['id_profile']) ?>" method="POST" enctype="multipart/form-data">
 
 
                                                     <div class="form-group">
@@ -22,7 +22,7 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="">password</label>
-                                                        <input type="text" name="password" class="form-control" placeholder=". . ." required="" value="<?php echo $profile['password'] ?>" />
+                                                        <input type="text" name="password" class="form-control" placeholder="<?php echo $profile['password'] ?>" />
                                                         <small>Masukkan password</small>
                                                     </div>
                                                     <div class="form-group">
@@ -32,7 +32,7 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="">foto</label>
-                                                        <input type="text" name="foto" class="form-control" placeholder=". . ." required="" value="<?php echo $profile['foto'] ?>" />
+                                                        <input type="file" name="userfile" />
                                                         <small>unggah foto</small>
                                                     </div>
                                                     

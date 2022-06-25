@@ -109,7 +109,13 @@
 
         public function prosescrawling(){
 
-            $api = "http://127.0.0.1:5000/crawling";
+
+            $keyword = $this->input->post('keyword');
+            $jumlah = $this->input->post('jumlah');
+
+            $api = "http://127.0.0.1:5000/crawling?keyword=" . $keyword.'&amount='. $jumlah;
+
+            
 
             $file = file_get_contents( $api );
             $decode = json_decode( $file );
@@ -129,7 +135,6 @@
                         'label' => ""
                     ) );
                 }
-
 
                 // insert to db
                 $this->M_dataset->insert_batch( $data );

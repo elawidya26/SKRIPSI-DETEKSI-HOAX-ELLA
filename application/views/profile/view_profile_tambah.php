@@ -12,7 +12,7 @@
 
                                                 <h4>Form profile</h4>
 
-                                                <form action="<?php echo base_url('profile/prosestambah') ?>" method="POST">
+                                                <form action="<?php echo base_url('profile/prosestambah') ?>" method="POST" enctype="multipart/form-data">
 
 
                                                     <div class="form-group">
@@ -32,7 +32,7 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="">foto</label>
-                                                        <input type="text" name="foto" class="form-control" placeholder=". . ." required="" />
+                                                        <input type="file" name="userfile" />
                                                         <small>Unggah foto</small>
                                                     </div>
                                                     
