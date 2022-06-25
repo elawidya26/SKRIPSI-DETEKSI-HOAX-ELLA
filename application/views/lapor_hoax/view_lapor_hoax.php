@@ -15,8 +15,8 @@
 										</span>
 									</div>
 									<div class="alert-text">
-									<p>The Metronic Datatable component supports initialization from HTML table. It also defines the schema model of the data source. In addition to the visualization, the Datatable provides built-in support for operations over data such as sorting, filtering and paging performed in user browser (frontend).</p>For more information visit 
-									<a class="font-weight-bold" href="https://keenthemes.com/metronic/?page=docs&amp;section=html/components/datatable" target="_blank">Metronic KTDatatable Documentation</a>.</div>
+									<p>Halaman ini juga dapat melaporkan informasi hoax yang ada di media sosial twitter agar masyarakat dapat mengetahui informasi apa saja yang mengandung unsur hoax. User dapat melaporkan informasi tentang vaksin covid agar masyarakat dapat mengetahui informasi apa saja yang hoax agar tidak langsung percaya dengan berita yang tersebar di media sosial.</p>
+									<!--<a class="font-weight-bold" href="https://keenthemes.com/metronic/?page=docs&amp;section=html/components/datatable" target="_blank">Metronic KTDatatable Documentation</a>.--></div>
 								</div>
 								<!--end::Notice-->
 								<!--begin::Card-->
