@@ -31,7 +31,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--end::Global Theme Styles-->
 		<!--begin::Layout Themes(used by all pages)-->
 		<!--end::Layout Themes-->
-		<link rel="shortcut icon" href="<?php echo base_url() ?>assets/frontend/media/logos/logopolinema.ico" />
+		<link rel="shortcut icon" href="<?php echo base_url() ?>assets/media/logos/logopolinema.ico" />
 	</head>
 	<!--end::Head-->
 	<!--begin::Body-->
@@ -169,7 +169,7 @@ License: You must have a valid license purchased only from themeforest(the above
 								<div class="d-none d-lg-flex align-items-center mr-3">
 									<!--begin::Logo-->
 									<a href="/metronic/demo12/index.html" class="mr-10">
-										<img alt="Logo" src="https://1.bp.blogspot.com/-PpH7CcrJIvE/X5WGsZUp6LI/AAAAAAAADRE/VIw1_NyjUC4HUnijuO1r2WBG4tfjpJGbgCLcBGAsYHQ/s1920/Logo%2BPolinema%2B%2528Politeknik%2BNegeri%2BMalang%2529.png" class="max-h-50px" />
+									<img alt="Logo" src="<?php echo base_url() ?>assets/media/logos/logo.png" class="max-h-60px" />
 									</a>
 									<!--end::Logo-->
                                     <?php if ( $this->session->userdata('id_profile') ) { ?>
