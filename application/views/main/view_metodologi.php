@@ -4,7 +4,11 @@
 			<div class="card-body">
 				<div class="p-6">
 					<h2 class="text-dark">Metodologi</h2>
-                    <p class="mb-8">Bagaimana caranya penelitian ini bisa berjalan ?</p>
+                    <p class="mb-8">Bagaimana caranya metode penelitian ini bisa berjalan ?</p>
+					<div class="text-center">
+						<img src="<?php echo base_url('assets/media/metode.png') ?>" style="width: 800px">
+                    	<small></small>
+					</div>
 					<!--begin::Accordion-->
 					<div class="accordion accordion-light accordion-light-borderless accordion-svg-toggle"
 						id="accordionExample7">
@@ -32,7 +36,7 @@
 										</svg>
 										<!--end::Svg Icon-->
 									</span>
-									<div class="card-label text-dark pl-4">Acquisition / Himpun Data Text</div>
+									<div class="card-label text-dark pl-4">Term Presence</div>
 								</div>
 							</div>
 							<!--end::Header-->
@@ -46,8 +50,10 @@
                                         </div>
                                         <div class="col-md-9">
                                             <div style="vertical-align: middle !important;">
-                                                Pada pengolahan data terkait Hoax atau Fakta, harus dilakukan tahapan Acquisition yaitu mempersiapkan data text baik itu dari web atau
-                                                dari twitter, pada hal ini terdapat 2 metode yaitu <b>Crawling</b> dan <b>Scraping</b>
+											Term frequency (TF) adalah salah satu fitur pada pengelolahan teks. 
+											Untuk perhitungan TF dilakukan menggunakan menghitung jumlah atau frekuensi kemunculan yang ada di setiap kata pada sebuah dokumen. 
+											Pada perhitungan TF menggunakan salah satu jenis formula yaitu Bi-nary TF Biner. 
+											TF Biner berguna untuk memperhatikan kemunculan kata dengan memberi nilai 1 atau 0 tanpa mempedulikan jumlah kemunculan kata dalam dokumen. 
                                             </div>
                                             
                                         </div>
@@ -81,23 +87,30 @@
 										</svg>
 										<!--end::Svg Icon-->
 									</span>
-									<div class="card-label text-dark pl-4">Prepocessing</div>
+									<div class="card-label text-dark pl-4">Bag Of Words</div>
 								</div>
 							</div>
 							<!--end::Header-->
 							<!--begin::Body-->
-							<div id="collapseTwo7" class="collapse" aria-labelledby="headingTwo7"
+							<!--begin::Body-->
+							<div id="collapseTwo7" class="collapse show" aria-labelledby="headingTwo7"
 								data-parent="#accordionExample7">
-								<div class="card-body text-dark-50 font-size-lg pl-12">Anim pariatur cliche
-									reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-									moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-									laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
-									single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-									craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
-									excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-									aesthetic synth nesciunt you probably haven't heard of them accusamus labore
-									sustainable VHS.</div>
+								<div class="card-body text-dark-50 font-size-lg pl-12">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <?php echo acquisition() ?>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div style="vertical-align: middle !important;">
+											Dalam masalah penjabaran teks, kata pada dokumen diberi bobot sesuai frekuensi pada dokumen & frekuensi pada antara dokumen berbeda.
+											proses menghitung jumlah nilai 1 dan 0 pada tiap label yang sudah dihitung sebelumnya pada term presence. 
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
 							</div>
+							<!--end::Body-->
 							<!--end::Body-->
 						</div>
 						<!--end::Item-->
@@ -125,22 +138,298 @@
 										</svg>
 										<!--end::Svg Icon-->
 									</span>
-									<div class="card-label text-dark pl-4">Processing</div>
+									<div class="card-label text-dark pl-4">Entropy</div>
 								</div>
 							</div>
 							<!--end::Header-->
 							<!--begin::Body-->
-							<div id="collapseThree7" class="collapse" aria-labelledby="headingThree7"
+							<div id="collapseThree7" class="collapse show" aria-labelledby="headingThree7"
 								data-parent="#accordionExample7">
-								<div class="card-body text-dark-50 font-size-lg pl-12">Anim pariatur cliche
-									reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-									moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-									laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
-									single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-									craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
-									excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-									aesthetic synth nesciunt you probably haven't heard of them accusamus labore
-									sustainable VHS.</div>
+								<div class="card-body text-dark-50 font-size-lg pl-12">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <?php echo acquisition() ?>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div style="vertical-align: middle !important;">
+											Entropy digunakan untuk mengukur nilai ketidak mur-nian sekumpulan objek pada setiap cabang pada suatu atribut.<br>
+											Rumus Entropy : 
+
+											<div class="text-center">
+												<img src="<?php echo base_url('assets/media/entropy.png') ?>" style="width: 300px">
+                    							<small></small>
+											</div>
+
+
+											Keterangan : 
+											C : Jumlah nilai yang ada pada atribut target ( jumlah kelas ) <br>
+											Pi : Jumlah sampel kelas i
+
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+							</div>
+							<!--end::Body-->
+						</div>
+						<!--end::Item-->
+						<!--begin::Item-->
+						<div class="card">
+							<!--begin::Header-->
+							<div class="card-header" id="headingFour7">
+								<div class="card-title collapsed" data-toggle="collapse" data-target="#collapseFour7"
+									aria-expanded="true" role="button">
+									<span class="svg-icon svg-icon-primary">
+										<!--begin::Svg Icon | path:/metronic/theme/html/demo12/dist/assets/media/svg/icons/Navigation/Angle-double-right.svg-->
+										<svg xmlns="http://www.w3.org/2000/svg"
+											xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
+											viewBox="0 0 24 24" version="1.1">
+											<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+												<polygon points="0 0 24 0 24 24 0 24" />
+												<path
+													d="M12.2928955,6.70710318 C11.9023712,6.31657888 11.9023712,5.68341391 12.2928955,5.29288961 C12.6834198,4.90236532 13.3165848,4.90236532 13.7071091,5.29288961 L19.7071091,11.2928896 C20.085688,11.6714686 20.0989336,12.281055 19.7371564,12.675721 L14.2371564,18.675721 C13.863964,19.08284 13.2313966,19.1103429 12.8242777,18.7371505 C12.4171587,18.3639581 12.3896557,17.7313908 12.7628481,17.3242718 L17.6158645,12.0300721 L12.2928955,6.70710318 Z"
+													fill="#000000" fill-rule="nonzero" />
+												<path
+													d="M3.70710678,15.7071068 C3.31658249,16.0976311 2.68341751,16.0976311 2.29289322,15.7071068 C1.90236893,15.3165825 1.90236893,14.6834175 2.29289322,14.2928932 L8.29289322,8.29289322 C8.67147216,7.91431428 9.28105859,7.90106866 9.67572463,8.26284586 L15.6757246,13.7628459 C16.0828436,14.1360383 16.1103465,14.7686056 15.7371541,15.1757246 C15.3639617,15.5828436 14.7313944,15.6103465 14.3242754,15.2371541 L9.03007575,10.3841378 L3.70710678,15.7071068 Z"
+													fill="#000000" fill-rule="nonzero" opacity="0.3"
+													transform="translate(9.000003, 11.999999) rotate(-270.000000) translate(-9.000003, -11.999999)" />
+											</g>
+										</svg>
+										<!--end::Svg Icon-->
+									</span>
+									<div class="card-label text-dark pl-4">Information Gain</div>
+								</div>
+							</div>
+							<!--end::Header-->
+							<!--begin::Body-->
+							<div id="collapseFour7" class="collapse show" aria-labelledby="headingFour7"
+								data-parent="#accordionExample7">
+								<div class="card-body text-dark-50 font-size-lg pl-12">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <?php echo acquisition() ?>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div style="vertical-align: middle !important;">
+											Information Gain adalah suatu teknik untuk mereduksi jumlah fitur yang sesuai atau relevan, kemudian mereduksi dimensi fitur dalam data yang akan dipakai.
+											Information Gain bisa dipakai untuk membantu memilih peringkat fitur. Biasanya fitur menggunakan nilai Information Gain yang tinggi, 
+											wajib  diberi peringkat lebih tinggi daripada fitur lainnya lantaran mempunyai kekuatan yang lebih kuat pada mengklasifikasikan data<br>
+											Rumus Information Gain : 
+											
+									
+											<div class="text-center">
+												<img src="<?php echo base_url('assets/media/informationgain.png') ?>" style="width: 300px">
+                    							<small></small>
+											</div>
+
+
+											Keterangan : 
+											Dimana 𝐻(𝑆) adalah entropy dari kumpulan data yang diberikan dan 𝐴 merupakan entropy dari subset ke-i yang dihasilkan dengan mempartisi 𝑆 berdasarkan fitur 𝐴.
+
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+							</div>
+							<!--end::Body-->
+						</div>
+						<!--end::Item-->
+						<!--begin::Item-->
+						<div class="card">
+							<!--begin::Header-->
+							<div class="card-header" id="headingFive7">
+								<div class="card-title collapsed" data-toggle="collapse" data-target="#collapseFive7"
+									aria-expanded="true" role="button">
+									<span class="svg-icon svg-icon-primary">
+										<!--begin::Svg Icon | path:/metronic/theme/html/demo12/dist/assets/media/svg/icons/Navigation/Angle-double-right.svg-->
+										<svg xmlns="http://www.w3.org/2000/svg"
+											xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
+											viewBox="0 0 24 24" version="1.1">
+											<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+												<polygon points="0 0 24 0 24 24 0 24" />
+												<path
+													d="M12.2928955,6.70710318 C11.9023712,6.31657888 11.9023712,5.68341391 12.2928955,5.29288961 C12.6834198,4.90236532 13.3165848,4.90236532 13.7071091,5.29288961 L19.7071091,11.2928896 C20.085688,11.6714686 20.0989336,12.281055 19.7371564,12.675721 L14.2371564,18.675721 C13.863964,19.08284 13.2313966,19.1103429 12.8242777,18.7371505 C12.4171587,18.3639581 12.3896557,17.7313908 12.7628481,17.3242718 L17.6158645,12.0300721 L12.2928955,6.70710318 Z"
+													fill="#000000" fill-rule="nonzero" />
+												<path
+													d="M3.70710678,15.7071068 C3.31658249,16.0976311 2.68341751,16.0976311 2.29289322,15.7071068 C1.90236893,15.3165825 1.90236893,14.6834175 2.29289322,14.2928932 L8.29289322,8.29289322 C8.67147216,7.91431428 9.28105859,7.90106866 9.67572463,8.26284586 L15.6757246,13.7628459 C16.0828436,14.1360383 16.1103465,14.7686056 15.7371541,15.1757246 C15.3639617,15.5828436 14.7313944,15.6103465 14.3242754,15.2371541 L9.03007575,10.3841378 L3.70710678,15.7071068 Z"
+													fill="#000000" fill-rule="nonzero" opacity="0.3"
+													transform="translate(9.000003, 11.999999) rotate(-270.000000) translate(-9.000003, -11.999999)" />
+											</g>
+										</svg>
+										<!--end::Svg Icon-->
+									</span>
+									<div class="card-label text-dark pl-4">Naive Bayes Multinomial</div>
+								</div>
+							</div>
+							<!--end::Header-->
+							<!--begin::Body-->
+							<div id="collapseFive7" class="collapse show" aria-labelledby="headingFive7"
+								data-parent="#accordionExample7">
+								<div class="card-body text-dark-50 font-size-lg pl-12">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <?php echo acquisition() ?>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div style="vertical-align: middle !important;">
+											merupakan tahap pengklasifikasian data uji.
+											Metode ini memperhitungkan jumlah kata dalam dokumen dengan tidak mempertimbangkan konteks berita & urutan kata dalam dokumen.<br>
+											Rumus Naive Bayes Multinomial : 
+											<br> 1. Untuk menentukan nilai probabilitas prior dari kelas c dapat dihitung dengan menggunakan rumus: 
+											<div class="text-center">
+												<img src="<?php echo base_url('assets/media/naive1.png') ?>" style="width: 300px">
+                    							<small></small>
+											</div>
+											<br> Keterangan : 
+											<br> N_c : jumlah kelas c pada seluruh dokumen. 
+											<br> 𝑁 : jumlah seluruh dokumen.
+
+											<br> 2. Probabilitas kata ke – n pada kelas c dapat ditentukan dengan 	menggunakan teknik laplacian smoothing sebagai berikut :
+											<div class="text-center">
+												<img src="<?php echo base_url('assets/media/naive2.png') ?>" style="width: 300px">
+                    							<small></small>
+											</div>
+											<br> Keterangan : 
+											<br> "count(" t_n c) 	: jumlah term 𝑡𝑛 yang ditemukan di seluruh data latih dengan kategori c. Ditambah dengan nilai 1 untuk menghindari nilai 0. 
+											<br> 𝑐𝑜𝑢𝑛𝑡(𝑐)			   : jumlah term di seluruh data latih dengan kategori c. 
+											<br> 𝑉 				 : jumlah seluruh term pada data latih.
+
+											<br> 3. Perkalian hasil maps.
+										
+											<div class="text-center">
+												<img src="<?php echo base_url('assets/media/naive3.png') ?>" style="width: 500px">
+                    							<small></small>
+											</div>
+
+											<br> Keterangan : 
+											<br> P_c 			: probabilitas prior dari kelas c 
+											<br> t_n 			: kata dokumen ke – n 
+             								<br> 𝑃(𝑐|𝑡𝑒𝑟𝑚 𝑑𝑜𝑘𝑢𝑚𝑒𝑛 𝑑) : probabilitas suatu dokumen termasuk kelas c 
+             								<br> P(t_(n|c) 	: probabilitas kata ke – n dengan diketahui kelas c
+
+
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+							</div>
+							<!--end::Body-->
+						</div>
+						<!--end::Item-->
+						<!--begin::Item-->
+						<div class="card">
+							<!--begin::Header-->
+							<div class="card-header" id="headingSix7">
+								<div class="card-title collapsed" data-toggle="collapse" data-target="#collapseSix7"
+									aria-expanded="true" role="button">
+									<span class="svg-icon svg-icon-primary">
+										<!--begin::Svg Icon | path:/metronic/theme/html/demo12/dist/assets/media/svg/icons/Navigation/Angle-double-right.svg-->
+										<svg xmlns="http://www.w3.org/2000/svg"
+											xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
+											viewBox="0 0 24 24" version="1.1">
+											<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+												<polygon points="0 0 24 0 24 24 0 24" />
+												<path
+													d="M12.2928955,6.70710318 C11.9023712,6.31657888 11.9023712,5.68341391 12.2928955,5.29288961 C12.6834198,4.90236532 13.3165848,4.90236532 13.7071091,5.29288961 L19.7071091,11.2928896 C20.085688,11.6714686 20.0989336,12.281055 19.7371564,12.675721 L14.2371564,18.675721 C13.863964,19.08284 13.2313966,19.1103429 12.8242777,18.7371505 C12.4171587,18.3639581 12.3896557,17.7313908 12.7628481,17.3242718 L17.6158645,12.0300721 L12.2928955,6.70710318 Z"
+													fill="#000000" fill-rule="nonzero" />
+												<path
+													d="M3.70710678,15.7071068 C3.31658249,16.0976311 2.68341751,16.0976311 2.29289322,15.7071068 C1.90236893,15.3165825 1.90236893,14.6834175 2.29289322,14.2928932 L8.29289322,8.29289322 C8.67147216,7.91431428 9.28105859,7.90106866 9.67572463,8.26284586 L15.6757246,13.7628459 C16.0828436,14.1360383 16.1103465,14.7686056 15.7371541,15.1757246 C15.3639617,15.5828436 14.7313944,15.6103465 14.3242754,15.2371541 L9.03007575,10.3841378 L3.70710678,15.7071068 Z"
+													fill="#000000" fill-rule="nonzero" opacity="0.3"
+													transform="translate(9.000003, 11.999999) rotate(-270.000000) translate(-9.000003, -11.999999)" />
+											</g>
+										</svg>
+										<!--end::Svg Icon-->
+									</span>
+									<div class="card-label text-dark pl-4">K-Fold Cross Validation</div>
+								</div>
+							</div>
+							<!--end::Header-->
+							<!--begin::Body-->
+							<div id="collapseSix7" class="collapse show" aria-labelledby="headingSix7"
+								data-parent="#accordionExample7">
+								<div class="card-body text-dark-50 font-size-lg pl-12">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <?php echo acquisition() ?>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div style="vertical-align: middle !important;">
+											Cross validation adalah suatu metode tambahan dari teknik data mining yang bertujuan untuk memperoleh hasil akurasi yang maksimal. 
+											Metode ini sering juga disebut dengan k-fold cross validation dimana percobaan sebanyak k kali untuk satu model dengan parameter yang sama.<br> Fungsi : 
+											<br>1. Untuk mengetahui performa dari suatu model algoritma dengan melakukan percobaan sebanyak k kali
+											<br>2. Untuk menningkatkan tingkat performansi dari model tersebut
+											<br>3. Untuk mengolah data set dengan kelas yang seimbang
+											
+									
+											<div class="text-center">
+												<img src="<?php echo base_url('assets/media/validasi.png') ?>" style="width: 500px">
+                    							<small></small>
+											</div>
+
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+							</div>
+							<!--end::Body-->
+						</div>
+						<!--end::Item-->
+						<!--begin::Item-->
+						<div class="card">
+							<!--begin::Header-->
+							<div class="card-header" id="headingSeven7">
+								<div class="card-title collapsed" data-toggle="collapse" data-target="#collapseSeven7"
+									aria-expanded="true" role="button">
+									<span class="svg-icon svg-icon-primary">
+										<!--begin::Svg Icon | path:/metronic/theme/html/demo12/dist/assets/media/svg/icons/Navigation/Angle-double-right.svg-->
+										<svg xmlns="http://www.w3.org/2000/svg"
+											xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
+											viewBox="0 0 24 24" version="1.1">
+											<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+												<polygon points="0 0 24 0 24 24 0 24" />
+												<path
+													d="M12.2928955,6.70710318 C11.9023712,6.31657888 11.9023712,5.68341391 12.2928955,5.29288961 C12.6834198,4.90236532 13.3165848,4.90236532 13.7071091,5.29288961 L19.7071091,11.2928896 C20.085688,11.6714686 20.0989336,12.281055 19.7371564,12.675721 L14.2371564,18.675721 C13.863964,19.08284 13.2313966,19.1103429 12.8242777,18.7371505 C12.4171587,18.3639581 12.3896557,17.7313908 12.7628481,17.3242718 L17.6158645,12.0300721 L12.2928955,6.70710318 Z"
+													fill="#000000" fill-rule="nonzero" />
+												<path
+													d="M3.70710678,15.7071068 C3.31658249,16.0976311 2.68341751,16.0976311 2.29289322,15.7071068 C1.90236893,15.3165825 1.90236893,14.6834175 2.29289322,14.2928932 L8.29289322,8.29289322 C8.67147216,7.91431428 9.28105859,7.90106866 9.67572463,8.26284586 L15.6757246,13.7628459 C16.0828436,14.1360383 16.1103465,14.7686056 15.7371541,15.1757246 C15.3639617,15.5828436 14.7313944,15.6103465 14.3242754,15.2371541 L9.03007575,10.3841378 L3.70710678,15.7071068 Z"
+													fill="#000000" fill-rule="nonzero" opacity="0.3"
+													transform="translate(9.000003, 11.999999) rotate(-270.000000) translate(-9.000003, -11.999999)" />
+											</g>
+										</svg>
+										<!--end::Svg Icon-->
+									</span>
+									<div class="card-label text-dark pl-4">Confusion Matrix</div>
+								</div>
+							</div>
+							<!--end::Header-->
+							<!--begin::Body-->
+							<div id="collapseSeven7" class="collapse show" aria-labelledby="headingSeven7"
+								data-parent="#accordionExample7">
+								<div class="card-body text-dark-50 font-size-lg pl-12">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <?php echo acquisition() ?>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div style="vertical-align: middle !important;">
+											Confusion Matrix merupakan tahap analisis & penilaian terhadap performansi sistem yang dirancang. 
+											Performansi diukur menggunakan nilai akurasi, precision, & recall. 
+											Confusion matrix merupakan suatu metode yang dipakai untuk melakukan perhitungan akurasi dalam konsep data mining.
+									
+											<div class="text-center">
+												<img src="<?php echo base_url('assets/media/confusion1.png') ?>" style="width: 500px">
+                    							<small></small>
+											</div>
+ 											
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
 							</div>
 							<!--end::Body-->
 						</div>

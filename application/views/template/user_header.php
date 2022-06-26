@@ -31,7 +31,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--end::Global Theme Styles-->
 		<!--begin::Layout Themes(used by all pages)-->
 		<!--end::Layout Themes-->
-		<link rel="shortcut icon" href="<?php echo base_url() ?>assets/frontend/media/logos/favicon.ico" />
+		<link rel="shortcut icon" href="<?php echo base_url() ?>assets/frontend/media/logos/logopolinema.ico" />
 	</head>
 	<!--end::Head-->
 	<!--begin::Body-->
@@ -42,7 +42,7 @@ License: You must have a valid license purchased only from themeforest(the above
 			<div class="d-flex align-items-center">
 				<!--begin::Logo-->
 				<a href="/metronic/demo12/index.html" class="mr-7">
-					<img alt="Logo" src="<?php echo base_url() ?>assets/frontend/media/logos/logo-letter-5.png" class="max-h-30px" />
+					<img alt="Logo" src="<?php echo base_url() ?>assets/frontend/media/logos/logo.png" class="max-h-30px" />
 				</a>
 				<!--end::Logo-->
 				<!--begin::Dropdown-->
@@ -215,12 +215,12 @@ License: You must have a valid license purchased only from themeforest(the above
 										<!--begin::Header Nav-->
 										<ul class="menu-nav">
 											<li class="menu-item">
-												<a href="" class="menu-link">
+												<a href="https://twitter.com/search?q=%23vaksincovid19&src=typed_query" class="menu-link">
 													<span class="menu-text">Twitter Mengenai Vaksin</span>
 												</a>
 											</li>
 											<li class="menu-item">
-												<a href="" class="menu-link">
+												<a href="https://turnbackhoax.id/tag/covid-19/" class="menu-link">
 													<span class="menu-text">Scrapping Turnbackhoax</span>
 												</a>
 											</li>

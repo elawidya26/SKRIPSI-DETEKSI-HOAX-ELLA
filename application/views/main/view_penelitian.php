@@ -168,13 +168,10 @@
 							<!--begin::Body-->
 							<div id="collapseOne7" class="collapse show" aria-labelledby="headingOne7"
 								data-parent="#accordionExample7">
-								<div class="card-body text-dark-50 font-size-lg pl-12">Anim pariatur cliche
-									reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-									moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-									laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
-									single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-									craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
-									excepteur butcher vice lomo.</div>
+								<div class="card-body text-dark-50 font-size-lg pl-12">Media sosial adalah sarana untuk bertukar pesan baik teks, gambar, video, maupun audio. 
+									Saat ini pengguna aktif media sosial di Indonesia semakin tinggi setiap tahunnya. Indonesia sudah ada salah satu media sosial yang digunakan yaitu salah satunya twitter. 
+									Setiap pengguna dibebaskan untuk mengunggah tweet yang mengandung konten positif maupun negatif. Informasi yang banyak ditemukan saat ini adalah mengenai COVID-19. 
+									Informasi COVID-19 yang beredar di me-dia sosial belum sepenuhnya benar atau sesuai fakta, informasi yang tidak benar atau bohong dapat disebut sebagai hoax. .</div>
 							</div>
 							<!--end::Body-->
 						</div>
@@ -210,15 +207,9 @@
 							<!--begin::Body-->
 							<div id="collapseTwo7" class="collapse" aria-labelledby="headingTwo7"
 								data-parent="#accordionExample7">
-								<div class="card-body text-dark-50 font-size-lg pl-12">Anim pariatur cliche
-									reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-									moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-									laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
-									single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-									craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
-									excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-									aesthetic synth nesciunt you probably haven't heard of them accusamus labore
-									sustainable VHS.</div>
+								<div class="card-body text-dark-50 font-size-lg pl-12">Dalam rangka memutus penyebaran COVID-19, pemerintah Indonesia pula akan melakukan vaksinasi pada penduduk Indonesia .
+									Seperti diketahui perencanaan pemerintah untuk melakukan vaksinasi terhadap penduduk di seluruh Indonesia ternyata mengalami hambatan dikarenakan adanya pemberitaan yang tidak benar atau tipuan. 
+									Berita kebohongan tentang komposisi vaksin COVID-19, berita hoax tentang dampak vaksin COVID-19 serta kebohongan tentang menolak vaksin COVID-19.</div>
 							</div>
 							<!--end::Body-->
 						</div>
@@ -254,15 +245,11 @@
 							<!--begin::Body-->
 							<div id="collapseThree7" class="collapse" aria-labelledby="headingThree7"
 								data-parent="#accordionExample7">
-								<div class="card-body text-dark-50 font-size-lg pl-12">Anim pariatur cliche
-									reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-									moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-									laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
-									single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-									craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
-									excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-									aesthetic synth nesciunt you probably haven't heard of them accusamus labore
-									sustainable VHS.</div>
+								<div class="card-body text-dark-50 font-size-lg pl-12">Dengan maraknya berita kebohongan khususnya tentang vaksin COVID-19 
+									maka penelitian membuat sistem  yang bertujuan untuk mengklasifikasikan informasi yang terdapat twitter kedalam kategori hoax atau non-hoax. 
+									Memakai Metode Naive Bayes Multinomial dan menggunakan seleksi fitur Information Gain.
+									Menggunakan data berbahasa Indonesia yang diambil dengan cara crawling twitter dan scraping dari website turnbackhoax.id secara berkala pada tahun 2021 dan tahun 2022, data diambil dari  trending yang mengandung unsur hoax dengan kata kunci “#vaksincovid19”. 
+								</div>
 							</div>
 							<!--end::Body-->
 						</div>
@@ -312,14 +299,11 @@
 							<!--begin::Body-->
 							<div id="collapseOne8" class="collapse show" aria-labelledby="headingOne8"
 								data-parent="#accordionExample8">
-								<div class="card-body text-dark-50 font-size-lg pl-12">Anim pariatur cliche
-									reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-									moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-									laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
-									single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-									craft beer labore wes anderson cred nesciunt sapiente ea proident. raw denim
-									aesthetic synth nesciunt you probably haven't heard of them accusamus labore
-									sustainable VHS.</div>
+								<div class="card-body text-dark-50 font-size-lg pl-12">Crawling Data merupakan suatu yang metode pengumpulan data akan digunakan untuk data referensi oleh sistem(Sriyano & Setiawan, 2021). 
+									Pada penelitian ini pengumpulan API pada twitter . 
+									Setiap sekali melakukan proses crawling data, data twitter yang dapat diatur untuk limit data. 
+									Data yang diambil merupakan postingan yang berdasarkan keyword dengan menggunakan hashtag yang diperkirakan mengandung berita hoax. 
+									Total jumlah data yang terkumpul adalah 500 data, Setelah data terkumpul dilakukan proses pelabelan .</div>
 							</div>
 							<!--end::Body-->
 						</div>
@@ -355,15 +339,10 @@
 							<!--begin::Body-->
 							<div id="collapseTwo8" class="collapse" aria-labelledby="headingTwo8"
 								data-parent="#accordionExample8">
-								<div class="card-body text-dark-50 font-size-lg pl-12">Anim pariatur cliche
-									reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-									moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-									laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
-									single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-									craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
-									excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-									aesthetic synth nesciunt you probably haven't heard of them accusamus labore
-									sustainable VHS.</div>
+								<div class="card-body text-dark-50 font-size-lg pl-12">Teknik untuk mendapatkan informasi dari website secara otomatis tanpa harus menyalinnya secara manual disebut web scraping . 
+									Tujuan dari web scraping adalah untuk mencari informasi tertentu dan lalu mengumpulkannya pada web yang baru. 
+									Web scraping hanya berfokus untuk mendapatkan data menggunakan cara pengambilan dan ekstraksi agar memudahkan dalam melakukan pencarian sesuatu dengan ukuran data yang bervariasi. 
+									mengambil sampel informasi dari website https://turnbackhoax.id</div>
 							</div>
 							<!--end::Body-->
 						</div>
@@ -392,22 +371,53 @@
 										</svg>
 										<!--end::Svg Icon-->
 									</span>
-									<div class="card-label text-dark pl-4">Klasifikasi</div>
+									<div class="card-label text-dark pl-4">Seleksi Fitur ?</div>
 								</div>
 							</div>
 							<!--end::Header-->
 							<!--begin::Body-->
 							<div id="collapseThree8" class="collapse" aria-labelledby="headingThree8"
 								data-parent="#accordionExample8">
-								<div class="card-body text-dark-50 font-size-lg pl-12">Anim pariatur cliche
-									reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-									moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-									laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
-									single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-									craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
-									excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-									aesthetic synth nesciunt you probably haven't heard of them accusamus labore
-									sustainable VHS.</div>
+								<div class="card-body text-dark-50 font-size-lg pl-12">salah satu proses pemilihan fitur yang relevan pada hal kasus pembelajaran target. 
+									Tujuan menurut seleksi fitur merupakan untuk menghapus fitur yang berlebihan dan yang tidak relevan(Purnamasari et al., 2018). 
+									Fitur yang tidak relevan merupakan fitur yang tidak memberikan informasi yang bermanfaat mengenai data, 
+									sedangkan fitur yang berlebihan merupakan fitur yang tidak memberikan berita lebih banyak daripada fitur yang dipilih saat ini.</div>
+							</div>
+							<!--end::Body-->
+						</div>
+						<!--end::Item-->
+						<!--begin::Item-->
+						<div class="card">
+							<!--begin::Header-->
+							<div class="card-header" id="headingFour8">
+								<div class="card-title collapsed" data-toggle="collapse" data-target="#collapseFour8"
+									aria-expanded="true" aria-controls="collapseFour8" role="button">
+									<span class="svg-icon svg-icon-primary">
+										<!--begin::Svg Icon | path:/metronic/theme/html/demo12/dist/assets/media/svg/icons/Navigation/Angle-double-right.svg-->
+										<svg xmlns="http://www.w3.org/2000/svg"
+											xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
+											viewBox="0 0 24 24" version="1.1">
+											<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+												<polygon points="0 0 24 0 24 24 0 24" />
+												<path
+													d="M12.2928955,6.70710318 C11.9023712,6.31657888 11.9023712,5.68341391 12.2928955,5.29288961 C12.6834198,4.90236532 13.3165848,4.90236532 13.7071091,5.29288961 L19.7071091,11.2928896 C20.085688,11.6714686 20.0989336,12.281055 19.7371564,12.675721 L14.2371564,18.675721 C13.863964,19.08284 13.2313966,19.1103429 12.8242777,18.7371505 C12.4171587,18.3639581 12.3896557,17.7313908 12.7628481,17.3242718 L17.6158645,12.0300721 L12.2928955,6.70710318 Z"
+													fill="#000000" fill-rule="nonzero" />
+												<path
+													d="M3.70710678,15.7071068 C3.31658249,16.0976311 2.68341751,16.0976311 2.29289322,15.7071068 C1.90236893,15.3165825 1.90236893,14.6834175 2.29289322,14.2928932 L8.29289322,8.29289322 C8.67147216,7.91431428 9.28105859,7.90106866 9.67572463,8.26284586 L15.6757246,13.7628459 C16.0828436,14.1360383 16.1103465,14.7686056 15.7371541,15.1757246 C15.3639617,15.5828436 14.7313944,15.6103465 14.3242754,15.2371541 L9.03007575,10.3841378 L3.70710678,15.7071068 Z"
+													fill="#000000" fill-rule="nonzero" opacity="0.3"
+													transform="translate(9.000003, 11.999999) rotate(-270.000000) translate(-9.000003, -11.999999)" />
+											</g>
+										</svg>
+										<!--end::Svg Icon-->
+									</span>
+									<div class="card-label text-dark pl-4">Klasifikasi</div>
+								</div>
+							</div>
+							<!--end::Header-->
+							<!--begin::Body-->
+							<div id="collapseFour8" class="collapse" aria-labelledby="headingFour8"
+								data-parent="#accordionExample8">
+								<div class="card-body text-dark-50 font-size-lg pl-12">Klasifikasi merupakan cara pengelompokkan data sesuai dengan ciri-ciri atau karakteristik data tersebut.</div>
 							</div>
 							<!--end::Body-->
 						</div>
