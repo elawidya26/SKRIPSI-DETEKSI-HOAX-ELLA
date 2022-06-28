@@ -187,15 +187,27 @@ License: You must have a valid license purchased only from themeforest(the above
 
 									<!--begin::User-->
 									<div class="topbar-item">
-										<div class="btn btn-icon w-auto d-flex align-items-center btn-lg px-2" id="kt_quick_user_toggle">
+										<?php
+											$sess = $this->session->userdata('id_profile');
+
+											$url = base_url('login');
+											$text = "Apakah Kamu Bagian Tim Riset ?";
+											if ( $sess ) {
+
+												$url = base_url('dashboard');
+												$text = "Halo ". $this->session->userdata('nama');
+											}
+										
+										?>
+										<a class="btn btn-icon w-auto d-flex align-items-center btn-lg px-2" href="<?php echo $url ?>">
 											<div class="d-flex text-right pr-3">
-												<span class="text-white opacity-50 font-weight-bold font-size-sm d-none d-md-inline mr-1">Hi,</span>
-												<span class="text-white font-weight-bolder font-size-sm d-none d-md-inline">Sean</span>
+												<span class="text-white opacity-50 font-weight-bold font-size-sm d-none d-md-inline mr-1">Holla,</span>
+												<span class="text-white font-weight-bolder font-size-sm d-none d-md-inline"><?php echo $text ?></span>
 											</div>
 											<span class="symbol symbol-35">
-												<span class="symbol-label font-size-h5 font-weight-bold text-white bg-white-o-15">S</span>
+												<span class="symbol-label font-size-h5 font-weight-bold text-white bg-white-o-15">A</span>
 											</span>
-										</div>
+										</a>
 									</div>
 									<!--end::User-->
 								</div>

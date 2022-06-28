@@ -201,9 +201,16 @@ License: You must have a valid license purchased only from themeforest(the above
 								<!--begin::Header Nav-->
 								<ul class="menu-nav">
 									<?php $uri = $this->uri->segment(1); ?>
+									
 									<li class="menu-item <?php if ( $uri == "dashboard" ) echo 'menu-item-here'; ?>">
 										<a href="<?php echo base_url('dashboard/index') ?>" class="menu-link">
 											<span class="menu-text">Dashboard</span>
+										</a>
+									</li>
+
+									<li class="menu-item">
+										<a href="<?php echo base_url() ?>" class="menu-link">
+											<span class="menu-text">Halaman Depan</span>
 										</a>
 									</li>
 									
@@ -238,6 +245,11 @@ License: You must have a valid license purchased only from themeforest(the above
 									<li class="menu-item  <?php if ( $uri == "profile" ) echo 'menu-item-here'; ?>">
 										<a href="<?php echo base_url('profile/index') ?>" class="menu-link">
 											<span class="menu-text">Profile</span>
+										</a>
+									</li>
+									<li class="menu-item  <?php if ( $uri == "faq" ) echo 'menu-item-here'; ?>">
+										<a href="<?php echo base_url('faq') ?>" class="menu-link">
+											<span class="menu-text">FAQ</span>
 										</a>
 									</li>
 
