@@ -179,6 +179,14 @@
 
 
 
+        public function truncate() {
+
+            $this->M_dataset->eksekusi_truncate();
+            redirect('dataset/index');
+        }
+
+
+
 
 
 

@@ -84,7 +84,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					<div id="kt_header_mobile" class="header-mobile">
 						<!--begin::Logo-->
 						<a href="/metronic/demo8/index.html">
-							<img alt="Logo" src="<?php echo base_url() ?>assets/media/logos/logo.png" class="max-h-80px" />
+							<img alt="Logo" src="<?php echo base_url() ?>assets/media/logos/Logo-2.png" class="max-h-80px" />
 						</a>
 						<!--end::Logo-->
 						<!--begin::Toolbar-->
@@ -117,7 +117,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							<div class="d-none d-lg-flex align-items-center mr-3">
 								<!--begin::Logo-->
 								<a href="/metronic/demo8/index.html" class="mr-20">
-									<img alt="Logo" src="<?php echo base_url() ?>assets/media/logos/logo.png" class="logo-default max-h-60px" />
+									<img alt="Logo" src="<?php echo base_url() ?>assets/media/logos/Logo-2.png" class="logo-default max-h-60px" />
 								</a>
 								<!--end::Logo-->
 							</div>

@@ -49,6 +49,15 @@
             $this->db->where( $this->primaryKey, $id_dataset );
             $this->db->update( $this->table, $data );
         }
+
+
+
+
+        public function eksekusi_truncate() {
+
+            $this->db->empty_table("preprocessing");
+            $this->db->empty_table($this->table);
+        }
     }
     
     /* End of file M_dataset.php */
