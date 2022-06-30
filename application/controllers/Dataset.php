@@ -1,5 +1,9 @@
 <?php 
 
+    // Include librari PhpSpreadsheet
+    use PhpOffice\PhpSpreadsheet\Spreadsheet;
+    use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
+
     defined('BASEPATH') OR exit('No direct script access allowed');
     
     class Dataset extends CI_Controller {
@@ -89,6 +93,86 @@
 
             $this->M_dataset->update($id_dataset, $tabel_dataset);
             redirect('dataset/index');
+        }
+
+
+
+
+
+
+
+
+        // import by excel
+        public function import() {
+
+            $filename = "";
+
+            $config['upload_path']          = './temporary/';
+            $config['allowed_types']        = 'xlsx';
+            $config['max_size']             = 10000;
+            $config['file_name']      = uniqid();
+            $this->load->library('upload', $config);
+            
+            if ( $this->upload->do_upload('userfile')){
+
+                echo $this->upload->display_errors();
+                // die();
+
+            } else {
+                
+                $filename = $this->upload->data('file_name');
+            }
+
+
+
+
+            // excel
+            $reader = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
+            $path = "temporary/". $config['file_name'].'.xlsx';
+            $spreadsheet = $reader->load($path); // Load file yang tadi diupload ke folder tmp
+            $sheet = $spreadsheet->getActiveSheet()->toArray(null, true, true, true);
+
+
+
+            $data_excel = [];
+            foreach ( $sheet as $index => $isi ) {
+
+                if ( $index > 1 ) {
+
+                    $label = "TRUE";
+
+                    if ( (String) $isi['E'] == "FAKE" ) {
+
+                        $label = "FAKE";
+                    }
+
+
+
+                    $isi_excel = array(
+
+                        'penulis'   => $isi['B'],
+                        'isi'       => $isi['D'],
+                        'tanggal_dataset'   => date('Y-m-d', strtotime($isi['C'],)),
+                        'label' => $label,
+                    );
+
+                    array_push( $data_excel, $isi_excel);
+                }
+            }
+
+            if ( count( $data_excel ) > 0 ) {
+
+                $this->M_dataset->insert_batch( $data_excel );
+                redirect('dataset/index');
+            } else {
+
+                echo "Excel yang diupload kosong !";
+            }
+            
+
+            
+
+
         }
 
 
