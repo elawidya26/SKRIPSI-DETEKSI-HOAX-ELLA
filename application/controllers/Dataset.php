@@ -153,6 +153,8 @@
                         'penulis'   => $isi['B'],
                         'isi'       => $isi['D'],
                         'tanggal_dataset'   => date('Y-m-d', strtotime($isi['C'],)),
+                        'sumber'=> $isi['H'],
+                        'bukti'=> $isi['F'],
                         'label' => $label,
                     );
 
@@ -216,7 +218,8 @@
                         'penulis'   => $isi->username,
                         'isi'       => $isi->text,
                         'tanggal_dataset'   => date('Y-m-d', strtotime($isi->date)),
-                        'label' => ""
+                        'label' => "",
+                        'sumber'=> "TWITTER" // TWITTER OR TURNBACKHOAX.ID
                     ) );
                 }
 
