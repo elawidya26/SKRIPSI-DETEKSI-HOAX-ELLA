@@ -113,7 +113,21 @@
 
             } else {
 
-                $file = file_get_contents( $api );
+                // $file = file_get_contents( $api );
+
+                // create curl resource 
+                $ch = curl_init(); 
+                    
+                // set url
+                curl_setopt($ch, CURLOPT_URL, $api); 
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+
+                // $output contains the output string 
+                $file = curl_exec($ch); 
+
+                // close curl resource to free up system resources 
+                curl_close($ch); 
+
                 $decode = json_decode( $file );
 
 
@@ -139,6 +153,8 @@
     
                         $kfold = $isi->kfold;
                         $akurasi = $isi->akurasi;
+                        $precision = $isi->precision;
+                        $recall = $isi->recall;
                         // $recall = $isi->classification_report->TRUE->recall;
                         // $precision = $isi->classification_report->TRUE->precision;
     
@@ -164,6 +180,8 @@
     
                             'kfold'     => $kfold,
                             'akurasi'   => $akurasi,
+                            'precision' => $precision,
+                            'recall' => $recall,
                             'model'     => $dt_model
                         ) );
     

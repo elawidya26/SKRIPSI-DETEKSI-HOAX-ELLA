@@ -91,34 +91,60 @@ class Preprocessing extends CI_Controller {
 
         $api = "http://127.0.0.1:5000/preprocessing";
 
-            $file = file_get_contents( $api );
+            // $file = file_get_contents( $api );
+
+            $headers = get_headers($api);
+            $res = substr($headers[0], 9, 3);
+
+            $ch = curl_init(); 
+                    
+            // set url
+            curl_setopt($ch, CURLOPT_URL, $api); 
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+
+            // $output contains the output string 
+            $file = curl_exec($ch); 
+
+            // close curl resource to free up system resources 
+            curl_close($ch); 
             $decode = json_decode( $file );
 
-            if ( $decode->status ) {
+            // echo $file;
 
 
-                $data = array();
+            if ( $res != 200 ) {
 
-                foreach ( $decode->data AS $isi){
-
-                    array_push( $data, array(
-
-                        'id_dataset'    => $isi->id_dataset,
-                        'hasil'         => $isi->text,
-                        'label'         => $isi->label
-                    ) );
-                }
-
-
-                // insert to db
-                $this->M_preprocessing->insert_batch( $data );
-
-                redirect('preprocessing/index');
+                return []; // empty
 
             } else {
 
-                echo "Eksekusi gagal !";
+                if ( $decode->status ) {
+
+
+                    $data = array();
+    
+                    foreach ( $decode->data AS $isi){
+    
+                        array_push( $data, array(
+    
+                            'id_dataset'    => $isi->id_dataset,
+                            'hasil'         => $isi->text,
+                            'label'         => $isi->label
+                        ) );
+                    }
+    
+    
+                    // insert to db
+                    $this->M_preprocessing->insert_batch( $data );
+    
+                    redirect('preprocessing/index');
+    
+                } else {
+    
+                    echo "Eksekusi gagal !";
+                }
             }
+            
     }
 
 }

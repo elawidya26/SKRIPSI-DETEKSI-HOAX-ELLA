@@ -56,6 +56,72 @@
 		<script src="<?php echo base_url() ?>assets/frontend/plugins/custom/prismjs/prismjs.bundle.js?v=7.2.9"></script>
 		<script src="<?php echo base_url() ?>assets/frontend/js/scripts.bundle.js?v=7.2.9"></script>
 		<!--end::Global Theme Bundle-->
+
+
+		
+		<script>
+
+		$(function() {
+
+
+			var klasifikasi = function( text ) {
+
+				var elementHTML = $('#konten');
+
+				$.ajax({
+					type: "GET",
+					url: "<?php echo base_url('klasifikasi/pengujian') ?>",
+					data: "text=" + text,
+					dataType: "json", 
+					beforeSend: function() {
+
+						elementHTML = `
+							<br><br>    
+							<small>Sedang memproses text dari "${text}"</small>
+						`;
+
+						$('#konten').html( elementHTML ).hide().show(500);
+					}, 
+					success: function( response ) {
+
+						if ( response.status ) {
+
+							elementHTML = `
+								<br>
+								<small>Hasil Klasifikasi : </small>
+								<h2 style="margin: 0px">"${response.data.prediksi}"</h2>
+								<br>
+								<small>Nilai Map True dan Fake</small><br>
+								<b> True '${response.data.map[0]}' | Fake '${response.data.map[1]}' </b>
+							`;
+						} else {
+
+							elementHTML = `
+								<br></br>
+
+								<small>Whoops !</small>
+								<h3>Tidak dapat terhubung ke server !</h3>
+							`;
+						}
+
+
+						$('#konten').html( elementHTML ).hide().show(500);
+					}
+				})
+			}
+
+
+			$('#form-data').submit( function( e ) {
+
+				var text = $('input[name="text"]').val();
+				
+				klasifikasi( text );
+
+				e.preventDefault();
+			} );
+		});
+		</script>
+
 	</body>
 	<!--end::Body-->
 </html>

@@ -200,12 +200,24 @@
             $jumlah = $this->input->post('jumlah');
 
             $api = "http://127.0.0.1:5000/crawling?keyword=" . $keyword.'&amount='. $jumlah;
-
+            // $file = file_get_contents( $api );
             
+            // create curl resource 
+            $ch = curl_init(); 
+            
+             // set url
+            curl_setopt($ch, CURLOPT_URL, $api); 
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
 
-            $file = file_get_contents( $api );
+            // $output contains the output string 
+            $file = curl_exec($ch); 
+
+            // close curl resource to free up system resources 
+            curl_close($ch); 
+
             $decode = json_decode( $file );
 
+            
             if ( $decode->status ) {
 
 
@@ -234,7 +246,7 @@
                 echo "Crawling gagal !";
             }
             
-
+            
         }
     }
     
