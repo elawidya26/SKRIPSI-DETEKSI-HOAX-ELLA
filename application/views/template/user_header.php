@@ -361,7 +361,8 @@ License: You must have a valid license purchased only from themeforest(the above
 										<h2 class="text-dark font-weight-bolder mb-8">Klasifikasi Deteksi Hoax Twitter</h2>
 										<!--end::Heading-->
 										<!--begin::Form-->
-										<form class="d-flex position-relative flex-row-fluid">
+										<form class="d-flex position-relative flex-row-fluid" id="form-data">
+										
 											<div class="input-group shadow-sm">
 												<!--begin::Icon-->
 												<div class="input-group-prepend">
@@ -381,12 +382,25 @@ License: You must have a valid license purchased only from themeforest(the above
 												</div>
 												<!--end::Icon-->
 												<!--begin::Input-->
-												<input type="text" class="form-control h-auto border-0 py-7 px-1 font-size-lg" placeholder="Uji Tweet atau Teks . . ." />
-												<!--end::Input-->
+												<input type="text" name="text" class="form-control h-auto border-0 py-7 px-1 font-size-lg" placeholder="Uji Tweet atau Teks . . ." />
+												
 											</div>
+
 										</form>
 										<!--end::Form-->
+
+										<!--end::Input-->
+										<label id="konten">
+
+										<br><br>
+										<small>Pengolahan Text Mining menggunakan Multinomial Naive Bayes</small>
+
+										</label>
 									</div>
+
+
+
+									
 									<!--end::Hero Body-->
 									<!--begin::Navigation-->
 									<div class="position-relative px-20">

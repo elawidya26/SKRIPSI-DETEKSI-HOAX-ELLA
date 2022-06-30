@@ -129,6 +129,7 @@
 												<?php foreach ( $result['data'] AS $rs ) : ?>
 
 													<h2>K-Fold <?php echo $rs['kfold'] ?></h2>
+													<b>Accuration : <?php echo ($rs['akurasi'] * 100) ?> &emsp;Precision : <?php echo ($rs['precision'] * 100) ?>&emsp;Recall : <?php echo ($rs['recall'] * 100) ?></b>
 													<!--begin: Datatable-->
 													<table class="table table-stripe">
 														<thead>

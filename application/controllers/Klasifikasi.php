@@ -58,18 +58,28 @@
             $headers = get_headers($api);
             $res = substr($headers[0], 9, 3);
 
-            $file = file_get_contents( $api );
+            // $file = file_get_contents( $api );
+
+            // create curl resource 
+            $ch = curl_init(); 
+            
+             // set url
+            curl_setopt($ch, CURLOPT_URL, $api); 
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+
+            // $output contains the output string 
+            $file = curl_exec($ch); 
+
+            // close curl resource to free up system resources 
+            curl_close($ch); 
+
 
             
 
             if ( $res != 200 ) {
 
                 return []; // empty
-
-                
-
-                
-
+               
 
             } else {
 
