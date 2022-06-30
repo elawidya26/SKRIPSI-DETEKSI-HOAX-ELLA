@@ -29,7 +29,7 @@
 										<div class="card-toolbar">
 											<!--begin::Dropdown-->
 											<div class="dropdown dropdown-inline mr-2">
-												<button type="button" class="btn btn-light-primary font-weight-bolder dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												<a href="javascript:;" data-toggle="modal" data-target="#exampleModal" class="btn btn-light-primary font-weight-bolder">
 												<span class="svg-icon svg-icon-md">
 													<!--begin::Svg Icon | path:/metronic/theme/html/demo8/dist/assets/media/svg/icons/Design/PenAndRuller.svg-->
 													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -40,56 +40,40 @@
 														</g>
 													</svg>
 													<!--end::Svg Icon-->
-												</span>Export</button>
-												<!--begin::Dropdown Menu-->
-												<div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
-													<!--begin::Navigation-->
-													<ul class="navi flex-column navi-hover py-2">
-														<li class="navi-header font-weight-bolder text-uppercase font-size-sm text-primary pb-2">Choose an option:</li>
-														<li class="navi-item">
-															<a href="#" class="navi-link">
-																<span class="navi-icon">
-																	<i class="la la-print"></i>
-																</span>
-																<span class="navi-text">Print</span>
-															</a>
-														</li>
-														<li class="navi-item">
-															<a href="#" class="navi-link">
-																<span class="navi-icon">
-																	<i class="la la-copy"></i>
-																</span>
-																<span class="navi-text">Copy</span>
-															</a>
-														</li>
-														<li class="navi-item">
-															<a href="#" class="navi-link">
-																<span class="navi-icon">
-																	<i class="la la-file-excel-o"></i>
-																</span>
-																<span class="navi-text">Excel</span>
-															</a>
-														</li>
-														<li class="navi-item">
-															<a href="#" class="navi-link">
-																<span class="navi-icon">
-																	<i class="la la-file-text-o"></i>
-																</span>
-																<span class="navi-text">CSV</span>
-															</a>
-														</li>
-														<li class="navi-item">
-															<a href="#" class="navi-link">
-																<span class="navi-icon">
-																	<i class="la la-file-pdf-o"></i>
-																</span>
-																<span class="navi-text">PDF</span>
-															</a>
-														</li>
-													</ul>
-													<!--end::Navigation-->
+												</span>Import</a>
+
+
+												<!-- Modal-->
+												<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+													<div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+														<div class="modal-content">
+
+															<form action="<?php echo base_url('dataset/import') ?>" method="post" enctype="multipart/form-data">
+															<div class="modal-body">
+																<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+																	<i aria-hidden="true" class="ki ki-close"></i>
+																</button>
+
+																<div class="form-group">
+																	<h3>Import Excel</h3>
+																	<a href="<?php echo base_url('dokumen/format-excel.xlsx') ?>">Unduh Template Excel</a>
+																</div>
+
+																<div class="form-group">
+																	<label for="">Masukkan Excel</label>
+																	<input type="file" name="userfile" />
+																	<small>Sisipkan file excel dan pastikan sudah mengunduh template excel dari sistem</small>
+																</div>
+															</div>
+															<div class="modal-footer">
+																<button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Batal</button>
+																<button type="submit" class="btn btn-primary font-weight-bold">Tambahkan</button>
+															</div>
+															</form>
+														</div>
+													</div>
 												</div>
-												<!--end::Dropdown Menu-->
+
 											</div>
 											<!--end::Dropdown-->
 											<!--begin::Button-->
