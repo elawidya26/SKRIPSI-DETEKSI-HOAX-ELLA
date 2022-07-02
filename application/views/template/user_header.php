@@ -42,7 +42,7 @@ License: You must have a valid license purchased only from themeforest(the above
 			<div class="d-flex align-items-center">
 				<!--begin::Logo-->
 				<a href="/metronic/demo12/index.html" class="mr-7">
-					<img alt="Logo" src="<?php echo base_url() ?>assets/frontend/media/logos/logo.png" class="max-h-30px" />
+					<img alt="Logo" src="<?php echo base_url() ?>assets/frontend/media/logos/Logo-2.png" class="max-h-30px" />
 				</a>
 				<!--end::Logo-->
 				<!--begin::Dropdown-->
@@ -169,7 +169,7 @@ License: You must have a valid license purchased only from themeforest(the above
 								<div class="d-none d-lg-flex align-items-center mr-3">
 									<!--begin::Logo-->
 									<a href="/metronic/demo12/index.html" class="mr-10">
-									<img alt="Logo" src="<?php echo base_url() ?>assets/media/logos/logo.png" class="max-h-60px" />
+									<img alt="Logo" src="<?php echo base_url() ?>assets/media/logos/Logo-2.png" class="max-h-60px" />
 									</a>
 									<!--end::Logo-->
                                     <?php if ( $this->session->userdata('id_profile') ) { ?>
