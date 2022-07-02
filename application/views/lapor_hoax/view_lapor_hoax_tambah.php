@@ -69,14 +69,14 @@
                                                         <label for="">status</label>
                                                         <div class="radio-inline">
                                                         	<label class="radio">
-                                                        		<input type="radio" name="status" value="mahasiswa" />
+                                                        		<input type="radio" name="status" value="Fakta" />
                                                         		<span></span>
-                                                        		Mahasiswa
+                                                        		Fakta
                                                         	</label>
                                                         	<label class="radio">
-                                                        		<input type="radio" name="status" value="masyarakat" />
+                                                        		<input type="radio" name="status" value="Palsu" />
                                                         		<span></span>
-                                                        		Masyarakat
+                                                        		Palsu
                                                         	</label>
                                                         </div>
                                                         <span class="form-text text-muted">Pilih Status</span>

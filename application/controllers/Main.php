@@ -8,6 +8,9 @@
         public function __construct() {
 
             parent::__construct();
+
+            $this->load->model('M_lapor_hoax');
+            $this->load->model('M_berita');
         }
 
         public function index(){
@@ -26,6 +29,63 @@
             $this->load->view('template/user_header');
             $this->load->view('main/view_metodologi');
             $this->load->view('template/user_footer');
+        }
+        
+        
+        // halaman metodologi
+        public function artikel( $id_berita = null ) {
+
+
+            if ( $id_berita ) {
+
+                $data['berita'] = $this->M_berita->getSpecificData( $id_berita )->row_array();
+
+                $this->load->view('template/user_header');
+                $this->load->view('main/view_artikel_detail', $data);
+                $this->load->view('template/user_footer');
+
+            } else {
+
+                $data['berita'] = $this->M_berita->get();
+
+                $this->load->view('template/user_header');
+                $this->load->view('main/view_artikel', $data);
+                $this->load->view('template/user_footer');
+            }
+        }
+
+
+        public function lapor() {
+
+            $this->load->view('template/user_header');
+            $this->load->view('main/view_lapor_hoax_user');
+            $this->load->view('template/user_footer');
+        }
+
+        // proses simpan laporan 
+        public function proseslaporan() {
+
+            // print_r( $this->input->post() );
+            $data = array(
+
+                'judul' => $this->input->post('nama'),
+                'isi'   => $this->input->post('isi'),
+                'label' => $this->input->post('label'),
+                'sumber'=> $this->input->post('sumber'),
+                'bukti' => $this->input->post('bukti'),
+                'nama'  => $this->input->post('nama'),
+                'email' => $this->input->post('email'),
+            );
+
+            $this->M_lapor_hoax->insert( $data );
+
+            $html = '<div class="alert alert-info">
+                    <b>Pemberitahuan</b><br>
+                    Laporan berhasil terkirim pada '.date('d F Y H.i A').' 
+                </div>';
+                $this->session->set_flashdata('pesan', $html);
+
+            redirect('main/lapor');
         }
         
         

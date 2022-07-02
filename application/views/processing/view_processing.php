@@ -18,6 +18,9 @@
 									<p> Preprocessing merupakan suatu proses pengubahan bentuk data teks yang tidak terstruktur sebagai bentuk yang terstruktur sesuai menggunakan kebutuhannya. Pada sistem yang dibangun, ada 5 tahap preprocessing yaitu Pertama Case Folding, Normalization , Tokenizing, Filtering , dan Stemming.</p>
 									</div>
 								</div>
+
+								<?php echo $this->session->flashdata('pesan') ?>
+
 								<!--end::Notice-->
 								<div class="row">
 
@@ -25,9 +28,27 @@
 										<div class="card card-custom">
 											<div class="card-body">
 												<form action="<?php echo base_url('processing/index') ?>" method="GET">
+
+
+													<?php
+													
+														$threshold = 50;
+														$training = 80;
+														$testing = 20;
+														$fold = "";
+
+														$get = $this->input->get();
+														if ( !empty($get['threshold']) ) {
+
+															$threshold = $get['threshold'];
+															$training = $get['training'];
+															$testing = $get['testing'];
+															$fold = $get['fold'];
+														}
+													?>
 													<div class="form-group">
 														<label for="">Threshold</label>
-														<input type="number" name="threshold" value="50" class="form-control" placeholder=". . ." />
+														<input type="number" name="threshold" value="<?php echo $threshold ?>" class="form-control" placeholder=". . ." />
 														<small>Atur data threshold</small>
 													</div>
 
@@ -36,14 +57,14 @@
 														<div class="col-md-6">
 															<div class="form-group">
 																<label for="">Training</label>
-																<input type="number" name="training" value="80" class="form-control" placeholder=". . ." />
+																<input type="number" name="training" value="<?php echo $training ?>" class="form-control" placeholder=". . ." />
 																<small>Atur data threshold</small>
 															</div>
 														</div>
 														<div class="col-md-6">
 															<div class="form-group">
 																<label for="">Testing</label>
-																<input type="number" name="testing" value="20" class="form-control" placeholder=". . ." />
+																<input type="number" name="testing" value="<?php echo $testing ?>" class="form-control" placeholder=". . ." />
 																<small>Atur data threshold</small>
 															</div>
 														</div>
@@ -51,7 +72,7 @@
 
 													<div class="form-group">
 														<label for="">Jumlah K-Fold</label>
-														<input type="number" name="fold" class="form-control" placeholder=". . ." />
+														<input type="number" name="fold" class="form-control" value="<?php echo $fold ?>" placeholder=". . ." />
 														<small>Atur data kfold</small>
 													</div>
 
@@ -130,6 +151,9 @@
 
 													<h2>K-Fold <?php echo $rs['kfold'] ?></h2>
 													<b>Accuration : <?php echo ($rs['akurasi'] * 100) ?> &emsp;Precision : <?php echo ($rs['precision'] * 100) ?>&emsp;Recall : <?php echo ($rs['recall'] * 100) ?></b>
+													<br>
+													<b>TP : <?php echo $rs['TP'] ?> &emsp; TN : <?php echo $rs['TN'] ?> &emsp; FP : <?php echo $rs['FP'] ?> &emsp; FN : <?php echo $rs['FN'] ?></b><br>
+													<small>Dengan split data train <?php echo $rs['train'] ?> dan testing <?php echo $rs['test'] ?></small>
 													<!--begin: Datatable-->
 													<table class="table table-stripe">
 														<thead>

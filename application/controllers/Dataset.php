@@ -56,12 +56,25 @@
             );
 
             $this->M_dataset->insert($tabel_dataset);
+
+            $html = '<div class="alert alert-info">
+                <b>Pemberitahuan</b><br>
+                Data berhasil ditambahkan pada tanggal '.date('d F Y H.i A').' 
+            </div>';
+            $this->session->set_flashdata('pesan', $html);
+
             redirect('dataset/index');
 
         }
 
 
         public function proseshapus( $id_dataset ) {
+
+            $html = '<div class="alert alert-danger">
+                <b>Pemberitahuan</b><br>
+                Data berhasil dihapus pada tanggal '.date('d F Y H.i A').' 
+            </div>';
+            $this->session->set_flashdata('pesan', $html);
 
             $this->M_dataset->delete($id_dataset);
             redirect('dataset/index');
@@ -92,6 +105,14 @@
             );
 
             $this->M_dataset->update($id_dataset, $tabel_dataset);
+
+
+            $html = '<div class="alert alert-success">
+                <b>Pemberitahuan</b><br>
+                Data berhasil diperbarui pada tanggal '.date('d F Y H.i A').' 
+            </div>';
+            $this->session->set_flashdata('pesan', $html);
+
             redirect('dataset/index');
         }
 
@@ -246,6 +267,11 @@
                 // insert to db
                 $this->M_dataset->insert_batch( $data );
 
+                $html = '<div class="alert alert-info">
+                    <b>Pemberitahuan</b><br>
+                    Crawling berhasil dengan waktu '.$decode->execution.' detik pada '.date('d F Y H.i A').' 
+                </div>';
+                $this->session->set_flashdata('pesan', $html);
 
                 redirect('dataset/index');
 
@@ -255,6 +281,38 @@
             }
             
             
+        }
+
+
+
+
+
+
+        // module laporan hoax masuk ke dataset
+        public function insert_laporan( $id_lapor_hoax ) {
+
+            $this->load->model('M_lapor_hoax');
+            $ambilDataLaporanHoax = $this->M_lapor_hoax->getSpecificData( $id_lapor_hoax )->row();
+
+            $data = array(
+
+                'penulis'   => $ambilDataLaporanHoax->nama,
+                'isi'       => $ambilDataLaporanHoax->isi,
+                'tanggal_dataset'   => date('Y-m-d', strtotime($ambilDataLaporanHoax->created_at)),
+                'sumber'=> $ambilDataLaporanHoax->sumber, // TWITTER OR TURNBACKHOAX.ID
+                'bukti'=> $ambilDataLaporanHoax->bukti,
+                'label' => $ambilDataLaporanHoax->label,
+            );
+
+            $this->M_dataset->insert($data);
+
+            $html = '<div class="alert alert-info">
+                <b>Pemberitahuan</b><br>
+                Laporan berhasil dimasukkan ke dalam dataset pada '.date('d F Y H.i A').' 
+            </div>';
+            $this->session->set_flashdata('pesan', $html);
+
+            redirect('lapor_hoax/index');
         }
     }
     

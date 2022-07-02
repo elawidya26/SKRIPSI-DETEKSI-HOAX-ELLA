@@ -19,6 +19,9 @@
 									</div>
 								</div>
 								<!--end::Notice-->
+
+								<?php echo $this->session->flashdata('pesan') ?>
+
 								<!--begin::Card-->
 								<div class="card card-custom">
 									<div class="card-header flex-wrap border-0 pt-6 pb-0">
@@ -72,7 +75,7 @@
 
 																<div class="form-group">
 																	<h3>Import Excel</h3>
-																	<a href="<?php echo base_url('dokumen/format-excel.xlsx') ?>">Unduh Template Excel</a>
+																	<a href="<?php echo base_url('dokumen/format-excel-versi2.xlsx') ?>">Unduh Template Excel</a>
 																</div>
 
 																<div class="form-group">

@@ -136,6 +136,12 @@ class Preprocessing extends CI_Controller {
     
                     // insert to db
                     $this->M_preprocessing->insert_batch( $data );
+
+                    $html = '<div class="alert alert-info">
+                        <b>Pemberitahuan</b><br>
+                        Preprocessing berhasil dengan waktu '.$decode->execution.' detik pada '.date('d F Y H.i A').' 
+                    </div>';
+                    $this->session->set_flashdata('pesan', $html);
     
                     redirect('preprocessing/index');
     

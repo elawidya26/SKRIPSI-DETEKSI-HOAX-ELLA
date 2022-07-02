@@ -182,10 +182,24 @@
                             'akurasi'   => $akurasi,
                             'precision' => $precision,
                             'recall' => $recall,
-                            'model'     => $dt_model
+                            'model'     => $dt_model,
+                            'TP' => $isi->TP,
+                            'TN' => $isi->TN,
+                            'FN' => $isi->FN,
+                            'FP' => $isi->FP,
+
+                            'train' => $isi->train,
+                            'test'  => $isi->test
                         ) );
     
                     }
+
+
+                    $html = '<div class="alert alert-info">
+                        <b>Pemberitahuan</b><br>
+                        Processing berhasil dengan waktu '.$decode->execution.' detik pada '.date('d F Y H.i A').' 
+                    </div>';
+                    $this->session->set_flashdata('pesan', $html);
     
     
                     return [

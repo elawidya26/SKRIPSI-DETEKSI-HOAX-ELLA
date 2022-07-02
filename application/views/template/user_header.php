@@ -422,7 +422,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											<!--end::Nav Item-->
 											<!--begin::Nav Item-->
 											<li class="nav-item mr-14 mt-4">
-												<a class="nav-link font-size-h5 font-weight-bold border-2 pb-6 mx-0" href="<?php echo base_url('main/artikel') ?>">Laporkan</a>
+												<a class="nav-link font-size-h5 font-weight-bold border-2 pb-6 mx-0" href="<?php echo base_url('main/lapor') ?>">Laporkan</a>
 											</li>
 											<!--end::Nav Item-->
 											<!--begin::Nav Item-->

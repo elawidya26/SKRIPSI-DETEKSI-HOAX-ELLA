@@ -19,6 +19,9 @@
 									<!--<a class="font-weight-bold" href="https://keenthemes.com/metronic/?page=docs&amp;section=html/components/datatable" target="_blank">Metronic KTDatatable Documentation</a>.--></div>
 								</div>
 								<!--end::Notice-->
+
+								<?php echo $this->session->flashdata('pesan') ?>
+								
 								<!--begin::Card-->
 								<div class="card card-custom">
 									<div class="card-header flex-wrap border-0 pt-6 pb-0">
@@ -159,7 +162,7 @@
 										<!--end::Search Form-->
 										<!--end: Search Form-->
 										<!--begin: Datatable-->
-										<table class="table table-stripe">
+										<table class="table table-stripe" style="font-size: 10px">
 											<thead>
 												<tr>
 													<th title="Field #1">No</th>
@@ -200,21 +203,33 @@
 													<td><?php echo $ds['bukti'] ?></td>
 													<td><?php echo $ds['nama'] ?></td>
 													<td><?php echo $ds['email'] ?></td>
-													<td><?php 
-													
-														if ( $ds['status'] == "mahasiswa" ) {
+													<td><?php 	
 
 
-															echo '<span class="label label-light-success label-pill label-inline">mahasiswa</span>';
+														$btn = "btn btn-sm btn-light-warning";
+														$text = "Laporan Palsu";
+														$link = "javascript:;";
+
+														if ( $ds['status'] == "Fakta" ) {
+
+
+															echo '<span class="label label-light-success label-pill label-inline">Fakta</span>';
+
+
+															$btn = "btn btn-sm btn-light-primary";
+															$text = "Masukkan Dataset";
+															$link = base_url('dataset/insert_laporan/'. $ds['id_lapor_hoax']);
+															
 														} else {
-
-															echo '<span class="label label-light-danger label-pill label-inline">masyarakat</span>';
+															
+															echo '<span class="label label-light-danger label-pill label-inline">Palsu</span>';
 														}
 													
 													?></td>
-													<td>
-														<a href="<?php echo base_url('lapor_hoax/proseshapus/'. $ds['id_lapor_hoax']) ?>" onclick="return confirm('Apakah anda yakin ingin menghapus lapor_hoax ini ?')" class="btn btn-sm btn-danger">Hapus</a>
-														<a href="<?php echo base_url('lapor_hoax/update/'. $ds['id_lapor_hoax']) ?>" class="btn btn-sm btn-warning">Update</a>
+													<td width="30%">
+														<a style="font-size: 10px !important" href="<?php echo base_url('lapor_hoax/proseshapus/'. $ds['id_lapor_hoax']) ?>" onclick="return confirm('Apakah anda yakin ingin menghapus lapor_hoax ini ?')" class="btn btn-sm btn-danger">Hapus</a>
+														<a style="font-size: 10px !important" href="<?php echo base_url('lapor_hoax/update/'. $ds['id_lapor_hoax']) ?>" class="btn btn-sm btn-warning">Update</a>
+														<a style="font-size: 10px !important" href="<?php echo $link ?>" class="<?php echo $btn ?>"><?php echo $text ?></a>
 													</td>
 												</tr>
 												<?php endforeach; ?>

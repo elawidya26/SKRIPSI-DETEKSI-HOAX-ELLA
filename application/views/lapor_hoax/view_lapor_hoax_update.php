@@ -65,15 +65,15 @@
                                                     <div class="form-group">
                                                         <label for="">status</label>
                                                         <div class="radio-inline">
-                                                        	<label class="radio">
-                                                        		<input type="radio" name="status" value="mahasiswa" <?php if ( $lapor_hoax['status'] == "mahasiswa" ) echo 'checked'; ?>/>
+                                                            <label class="radio">
+                                                        		<input type="radio" name="status" value="Fakta" <?php echo $lapor_hoax['status'] == "Fakta" ? 'checked' : '' ?>/>
                                                         		<span></span>
-                                                        		Mahasiswa
+                                                        		Fakta
                                                         	</label>
                                                         	<label class="radio">
-                                                        		<input type="radio" name="status" value="masyarakat" <?php if ( $lapor_hoax['status'] == "masyarakat" ) echo 'checked'; ?>/>
+                                                        		<input type="radio" name="status" value="Palsu" <?php echo $lapor_hoax['status'] == "Palsu" ? 'checked' : '' ?>/>
                                                         		<span></span>
-                                                        		Masyarakat
+                                                        		Palsu
                                                         	</label>
                                                         </div>
                                                         <span class="form-text text-muted">Pilih status</span>

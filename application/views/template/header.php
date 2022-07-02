@@ -208,10 +208,27 @@ License: You must have a valid license purchased only from themeforest(the above
 										</a>
 									</li>
 
-									<li class="menu-item">
-										<a href="<?php echo base_url() ?>" class="menu-link">
-											<span class="menu-text">Halaman Depan</span>
+									<li class="menu-item menu-item-open menu-item-submenu menu-item-rel menu-item-open" data-menu-toggle="click" aria-haspopup="true">
+										<a href="javascript:;" class="menu-link menu-toggle">
+											<span class="menu-text">Front-End</span>
+											<i class="menu-arrow"></i>
 										</a>
+										<div class="menu-submenu menu-submenu-classic menu-submenu-left">
+											<ul class="menu-subnav">
+												<li class="menu-item menu-item-active" aria-haspopup="true">
+													<a href="<?php echo base_url() ?>" class="menu-link">
+														<span class="menu-text">Halaman Depan</span>
+														<span class="menu-desc"></span>
+													</a>
+												</li>
+												<li class="menu-item" aria-haspopup="true">
+													<a href="<?php echo base_url('berita') ?>" class="menu-link">
+														<span class="menu-text">Berita / Artikel</span>
+														<span class="menu-desc"></span>
+													</a>
+												</li>
+											</ul>
+										</div>
 									</li>
 									
                                     <li class="menu-item <?php if ( $uri == "dataset" ) echo 'menu-item-here'; ?>">
@@ -239,7 +256,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     
                                     <li class="menu-item  <?php if ( $uri == "lapor_hoax" ) echo 'menu-item-here'; ?>">
 										<a href="<?php echo base_url('lapor_hoax/index') ?>" class="menu-link">
-											<span class="menu-text">Laporan Hoax</span>
+											<span class="menu-text">Laporan</span>
 										</a>
 									</li>
 									<li class="menu-item  <?php if ( $uri == "profile" ) echo 'menu-item-here'; ?>">

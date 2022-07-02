@@ -39,6 +39,11 @@
 
         public function delete( $id_dataset ) {
 
+            // hapus prepro
+            $this->db->where( $this->primaryKey, $id_dataset );
+            $this->db->delete( "preprocessing" );
+
+
             $this->db->where( $this->primaryKey, $id_dataset );
             $this->db->delete( $this->table );
         }
