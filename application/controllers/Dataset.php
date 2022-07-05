@@ -227,8 +227,9 @@
 
             $keyword = $this->input->post('keyword');
             $jumlah = $this->input->post('jumlah');
+            $max = $this->input->post('max');
 
-            $api = "http://127.0.0.1:5000/crawling?keyword=" . $keyword.'&amount='. $jumlah;
+            $api = "http://127.0.0.1:5000/crawling?keyword=" . $keyword.'&jumlah='. $jumlah.'&max='. $max;
             // $file = file_get_contents( $api );
             
             // create curl resource 

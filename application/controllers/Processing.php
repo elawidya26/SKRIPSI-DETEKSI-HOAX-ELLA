@@ -15,7 +15,18 @@
 
         public function index(){
 
-            $data['result'] = $this->komputasi();
+
+            $threshold = $this->input->get('threshold');
+            $hitung = [];
+            if( $threshold ) {
+
+                $hitung = $this->komputasi();
+            }
+
+
+            $data['result'] = $hitung;
+
+            
             
             $this->load->view('template/header');
             $this->load->view('processing/view_processing', $data);

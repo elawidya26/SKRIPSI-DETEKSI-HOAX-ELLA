@@ -24,6 +24,7 @@ class Dataset extends RestController{
 
         
         $id_dataset = $this->input->get('id_dataset');
+        $limit = $this->input->get('limit');
         $dt_data = []; // 
 
         // Request 
@@ -31,6 +32,8 @@ class Dataset extends RestController{
 
             $where = ['id_dataset' => $id_dataset];
             $ambil_data = $this->M_api->get( $this->table, $where );
+
+            // $ambil_data = 
             
             if ( $ambil_data->num_rows() > 0 ) {
 
@@ -38,7 +41,11 @@ class Dataset extends RestController{
             }
         } else {
 
-            $ambil_data = $this->M_api->get( $this->table );
+            // $ambil_data = $this->M_api->get( $this->table );
+            
+        
+            $ambil_data = $this->db->where('status', 0)->limit(10)->get( $this->table );
+
             $dt_data = $ambil_data->result_array();
         }
 

@@ -43,7 +43,7 @@
         // insert batch
         public function insert_batch( $data ) {
 
-            $this->db->empty_table( $this->table );
+            
             $this->db->insert_batch( $this->table, $data );
         }
 

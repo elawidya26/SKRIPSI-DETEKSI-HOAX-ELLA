@@ -17,14 +17,19 @@
 
                                                     <div class="form-group">
                                                         <label for="">Kata Kunci</label>
-                                                        <input type="text" name="keyword" class="form-control" placeholder=". . ." required="" value="#vaksincovid19" />
+                                                        <input type="text" name="keyword" class="form-control" placeholder=". . ." required="" value="vaksincovid19" />
                                                         <small>Masukkan kata kunci</small>
                                                     </div>
                                         
                                                     <div class="form-group">
                                                         <label for="">Jumlah</label>
-                                                        <input type="number" name="jumlah" class="form-control" value="100" required="" />
-                                                        <small>Pilih jumlah berita</small>
+                                                        <input type="number" name="jumlah" class="form-control" value="3" required="" />
+                                                        <small>Pilih jumlah crawling</small>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="">Maks per-crawling (iterasi)</label>
+                                                        <input type="number" name="max" class="form-control" value="1" required="" />
+                                                        <small></small>
                                                     </div>
 
 

@@ -27,7 +27,7 @@
 									<div class="card-header flex-wrap border-0 pt-6 pb-0">
 										<div class="card-title">
 											<h3 class="card-label">Tabel Preprocessing 
-											<span class="d-block text-muted pt-2 font-size-sm">Hasil dari dataset yang telah diolah preprocessing</span></h3>
+											<span class="d-block text-muted pt-2 font-size-sm" id="pesan">Hasil dari dataset yang telah diolah preprocessing</span></h3>
 										</div>
 										<div class="card-toolbar">
 											<!--begin::Dropdown-->
@@ -86,7 +86,7 @@
 											<!--end::Dropdown-->
 
 											<!--begin::Button-->
-											<a href="<?php echo base_url('preprocessing/eksekusi_api') ?>" class="btn btn-success font-weight-bolder">
+											<a href="javasript:;" id="btn-proses" class="btn btn-success font-weight-bolder">
 											<span class="svg-icon svg-icon-md">
 												<!--begin::Svg Icon | path:/metronic/theme/html/demo8/dist/assets/media/svg/icons/Design/Flatten.svg-->
 												<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -139,29 +139,8 @@
 													<th title="Field #3">Label</th>
 												</tr>
 											</thead>
-											<tbody>
-												<?php 
+											<tbody id="konten-tabel">
 												
-												
-												foreach ( $preprocessing->result_array() AS $num => $ds ) : ?>
-												<tr>
-													<td><?php echo $num + 1 ?></td>
-													<td><?php echo $ds['hasil'] ?></td>
-													
-													<td><?php 
-													
-														if ( $ds['label'] == "TRUE" ) {
-
-
-															echo '<span class="label label-light-success label-pill label-inline">TRUE</span>';
-														} else {
-
-															echo '<span class="label label-light-danger label-pill label-inline">FAKE</span>';
-														}
-													
-													?></td>
-												</tr>
-												<?php endforeach; ?>
 											</tbody>
 										</table>
 										<!--end: Datatable-->
@@ -169,3 +148,68 @@
 								</div>
 								<!--end::Card-->
 							</div>
+
+
+
+<script>
+	$(function() {
+
+
+		// tampil semua hasil data yang telah dilakukan preprocessing
+		$.ajax({
+			type: "GET",
+			url: "<?php echo base_url('preprocessing/tampil') ?>",
+			dataType: "json",
+			beforeSend: function () {
+
+				$('#konten-tabel').html(`
+						<tr>
+							<td colspan="3" align="center">
+								<h5>Sedang Memproses data . . .</h5>
+								<img src="https://i.gifer.com/origin/7f/7f2487e9bcf3b76eab3e9277f7beb6af_w200.gif">
+							</td>
+						</tr>
+					`);
+			},
+			success: function (hasil) {
+
+				$('#pesan').text(hasil.pesan);
+				$('#konten-tabel').html(hasil.data);
+			}
+
+		})
+
+
+
+		// tambahkan preprocessing baru
+		$('#btn-proses').click(function() {
+
+			$.ajax({
+				type: "GET",
+				url : "<?php echo base_url('preprocessing/hasil') ?>",
+				dataType: "json",
+				beforeSend: function() {
+
+					$('#konten-tabel').html(`
+						<tr>
+							<td colspan="3" align="center">
+								<h5>Sedang Memproses data . . .</h5>
+								<img src="https://i.gifer.com/origin/7f/7f2487e9bcf3b76eab3e9277f7beb6af_w200.gif">
+							</td>
+						</tr>
+					`);
+				}, success: function( hasil ) {
+
+					$('#pesan').text(hasil.pesan);
+					$('#konten-tabel').html( hasil.data );
+				}, error: function( er ) {
+
+					console.log( er );
+				}
+
+			})
+		})
+	})
+</script>
+
+

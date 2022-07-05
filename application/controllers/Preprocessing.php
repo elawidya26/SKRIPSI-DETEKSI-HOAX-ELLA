@@ -1,7 +1,8 @@
 <?php
 
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+ini_set('max_execution_time', 0); 
+ini_set('memory_limit','2048M');
 class Preprocessing extends CI_Controller {
     function __construct() {
 
@@ -85,6 +86,92 @@ class Preprocessing extends CI_Controller {
 
 
 
+    // tampil data
+    public function tampil() {
+
+        // ambil data eksekusi api 
+        $dt_prepro = $this->db->get('preprocessing');
+        
+        $isi_tabel = "";
+        foreach ( $dt_prepro->result_array() AS $urutan => $row ) {
+            
+
+            if ( $row['label'] == "TRUE" ) {
+
+
+                $label = '<span class="label label-light-success label-pill label-inline">TRUE</span>';
+            } else {
+
+                $label = '<span class="label label-light-danger label-pill label-inline">FAKE</span>';
+            }
+
+            $isi_tabel .= '<tr>
+                <td>'.($urutan + 1).'</td>
+                <td>'.$row['hasil'].'</td>
+                <td>'.$label.'</td>
+            </tr>';
+        }
+
+
+        echo json_encode([
+
+            'pesan' => "",
+            'data'  => $isi_tabel
+        ]);
+    }
+
+
+    public function hasil() {
+
+
+        // truncate before preprocessing
+        $this->db->empty_table( "preprocessing" );
+        // update all dataset status's to 0 
+        $this->db->where('status', 1)->update('dataset', ['status' => 0]);
+
+        $total = $this->db->get_where('dataset', ['status' => 0])->num_rows();
+        $limit = 10;
+
+        $offset = ceil($total / $limit);
+
+        $i = 0;
+        while ( $i < $offset ) {
+
+
+            $proses_prepro = $this->eksekusi_api();
+            $i++;
+        }          
+
+        // ambil data eksekusi api 
+        $dt_prepro = $this->db->get('preprocessing');
+        
+        $isi_tabel = "";
+        foreach ( $dt_prepro->result_array() AS $urutan => $row ) {
+            
+
+            if ( $row['label'] == "TRUE" ) {
+
+
+                $label = '<span class="label label-light-success label-pill label-inline">TRUE</span>';
+            } else {
+
+                $label = '<span class="label label-light-danger label-pill label-inline">FAKE</span>';
+            }
+
+            $isi_tabel .= '<tr>
+                <td>'.($urutan + 1).'</td>
+                <td>'.$row['hasil'].'</td>
+                <td>'.$label.'</td>
+            </tr>';
+        }
+
+
+        echo json_encode([
+
+            'pesan' => "Waktu Eksekusi ",
+            'data'  => $isi_tabel
+        ]);
+    }
 
 
     public function eksekusi_api() {
@@ -101,6 +188,11 @@ class Preprocessing extends CI_Controller {
             // set url
             curl_setopt($ch, CURLOPT_URL, $api); 
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+            curl_setopt( $ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 5.1; rv:1.7.3) Gecko/20041001 Firefox/0.10.1" );
+            curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 2);
+
+
+
 
             // $output contains the output string 
             $file = curl_exec($ch); 
@@ -122,6 +214,7 @@ class Preprocessing extends CI_Controller {
 
 
                     $data = array();
+                    $data_update = array();
     
                     foreach ( $decode->data AS $isi){
     
@@ -131,19 +224,30 @@ class Preprocessing extends CI_Controller {
                             'hasil'         => $isi->text,
                             'label'         => $isi->label
                         ) );
+
+
+                        array_push( $data_update, array(
+
+                            'id_dataset'    => $isi->id_dataset,
+                            'status'        => 1
+                        ) );
                     }
     
     
                     // insert to db
                     $this->M_preprocessing->insert_batch( $data );
+                    $this->db->update_batch('dataset', $data_update, 'id_dataset');
 
-                    $html = '<div class="alert alert-info">
-                        <b>Pemberitahuan</b><br>
-                        Preprocessing berhasil dengan waktu '.$decode->execution.' detik pada '.date('d F Y H.i A').' 
-                    </div>';
-                    $this->session->set_flashdata('pesan', $html);
+                    // return $decode->execution;
+                    // return true;
+
+                    // $html = '<div class="alert alert-info">
+                    //     <b>Pemberitahuan</b><br>
+                    //     Preprocessing berhasil dengan waktu '.$decode->execution.' detik pada '.date('d F Y H.i A').' 
+                    // </div>';
+                    // $this->session->set_flashdata('pesan', $html);
     
-                    redirect('preprocessing/index');
+                    // redirect('preprocessing/index');
     
                 } else {
     
