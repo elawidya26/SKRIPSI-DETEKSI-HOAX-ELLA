@@ -60,6 +60,12 @@ class Preprocessing extends RestController{
             'data'      => $dt_data
 
         ], JSON_PRETTY_PRINT);
+        
+        // $this->response([
+        //     'status' => $status,
+        //     'pesan' => $pesan,
+        //     'data' => $dt_data
+        // ], 200);
     }
 
 }
