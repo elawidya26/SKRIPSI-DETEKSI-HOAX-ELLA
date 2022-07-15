@@ -247,8 +247,9 @@
 
             // header('Content-Type: application/json; charset=utf-8');
             
-            $headers = get_headers($api);
-            $res = substr($headers[0], 9, 3);
+            //$headers = get_headers($api);
+            //$res = substr($headers[0], 9, 3);
+            $res = 200;
 
 
             if( empty( $threshold ) ) return [];

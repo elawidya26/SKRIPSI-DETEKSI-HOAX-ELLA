@@ -43,7 +43,7 @@ class Dataset extends RestController{
 
             // $ambil_data = $this->M_api->get( $this->table );
             
-        
+        // pengambil data saat preprocessing
             $ambil_data = $this->db->where('status', 0)->limit(10)->get( $this->table );
 
             $dt_data = $ambil_data->result_array();
