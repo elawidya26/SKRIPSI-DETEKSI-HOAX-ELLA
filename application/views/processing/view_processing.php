@@ -27,7 +27,7 @@
 									<div class="col-md-3">
 										<div class="card card-custom">
 											<div class="card-body">
-												<form action="<?php echo base_url('processing/index') ?>" method="GET">
+												<form action="<?php echo base_url('processing/do_processing') ?>" method="GET">
 
 
 													<?php

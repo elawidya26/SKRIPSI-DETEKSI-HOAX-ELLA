@@ -15,23 +15,122 @@
 
         public function index(){
 
+            $data['result'] = $this->visual();
 
-            $threshold = $this->input->get('threshold');
-            $hitung = [];
-            if( $threshold ) {
-
-                $hitung = $this->komputasi();
-            }
-
-
-            $data['result'] = $hitung;
-
-            
-            
+                    
             $this->load->view('template/header');
             $this->load->view('processing/view_processing', $data);
             $this->load->view('template/footer');
         }    
+
+
+
+
+        public function visual() {
+
+            $hasil = array();
+            $ambilHasil = $this->db->get('processing');
+
+            if ( $ambilHasil->num_rows() > 0 ) {
+
+                $isi = $ambilHasil->row_array();
+                // header('Content-type: application/json');
+            
+                // $data_json_stripe = stripslashes( $isi['dt_testing'] );
+                $cleaning = str_replace("\\n", "", $isi['dt_testing']);
+                
+                $cleaning = str_replace("\'","'",$cleaning); // remove only slash
+                $cleaning = stripslashes($cleaning); // remove only slash
+                $cleaning = stripslashes($cleaning); // remove only slash
+                $cleaning = stripslashes($cleaning); // remove only slash
+                $cleaning = str_replace('"[', "[", $cleaning);
+                $cleaning = str_replace(']"', "]", $cleaning);
+                $cleaning = str_replace('"{', "{", $cleaning);
+                $cleaning = str_replace('}"', "}", $cleaning);
+
+                
+
+                $decode = json_decode( $cleaning );
+
+
+                // echo '<hr><hr>';
+
+                $total_acc = [];
+                $total_precision = [];
+                $total_recall = [];
+
+                $data = [];
+
+
+                if ( $decode->status == true ) {
+
+                    foreach ( $decode->data AS $isi ) {
+
+                        $kfold = $isi->kfold;
+                        $akurasi = $isi->akurasi;
+                        $precision = $isi->precision;
+                        $recall = $isi->recall;
+                        // $recall = $isi->classification_report->TRUE->recall;
+                        // $precision = $isi->classification_report->TRUE->precision;
+
+
+                        $total_acc[] = $akurasi;
+                        $total_precision[] = $isi->precision;
+                        $total_recall[] = $isi->recall;
+                        
+                        // data model 
+                        $dt_model = array();
+                        foreach ( $isi->model AS $mdl ) {
+
+                            array_push( $dt_model, array(
+
+                                'text'      => $mdl->text,
+                                'actual'    => $mdl->actual,
+                                'predict'    => $mdl->predict,
+                            ) );
+                        }
+
+
+                        array_push( $data, array(
+
+                            'kfold'     => $kfold,
+                            'akurasi'   => $akurasi,
+                            'precision' => $precision,
+                            'recall' => $recall,
+                            'model'     => $dt_model,
+                            'TP' => $isi->TP,
+                            'TN' => $isi->TN,
+                            'FN' => $isi->FN,
+                            'FP' => $isi->FP,
+
+                            'train' => $isi->train,
+                            'test'  => $isi->test
+                        ) );
+                    }
+
+                }
+
+                
+
+
+
+
+                $hasil = [
+
+                    'data'  => $data,
+                    'avg_acc'   => array_sum($total_acc)/count($total_acc),
+                    'avg_precision'   => array_sum($total_precision)/count($total_precision),
+                    'avg_recall'   => array_sum($total_recall)/count($total_recall),
+
+                ];
+
+
+                
+            }
+
+
+            return $hasil;
+        }
 
 
 
@@ -98,6 +197,43 @@
 
 
 
+        public function do_processing() {
+
+            $this->db->where('name', "processing")->update("scheduling", ['status' => 1]);
+
+             // input get
+            $threshold = $this->input->get('threshold');
+            $training = $this->input->get('training');
+            $testing = $this->input->get('testing');
+            $fold = $this->input->get('fold');
+    
+            $api = "http://127.0.0.1:5000/processing";
+            $api = "http://127.0.0.1:5000/processing/" . ($training / 100) . "/" . ($testing / 100) . "/". $threshold ."/". $fold;
+            // $file = file_get_contents( $api );
+            
+            // create curl resource 
+            $ch = curl_init(); 
+            
+             // set url
+            curl_setopt($ch, CURLOPT_URL, $api); 
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+    
+            // $output contains the output string 
+            $file = curl_exec($ch); 
+    
+            // close curl resource to free up system resources 
+            curl_close($ch); 
+    
+            $html = '<div class="alert alert-info">
+                <b>Pemberitahuan</b><br>
+                Sedang menjalankan proses Processing pada latar belakang, periksa notifikasi untuk melihat status terkini 
+            </div>';
+            $this->session->set_flashdata('pesan', $html);
+            redirect('processing/index?threshold='.$threshold.'&training='.$training.'&testing='.$testing.'&fold='. $fold);
+        }
+
+
+
         public function komputasi() {
 
             // input get
@@ -145,82 +281,7 @@
                 if ( $decode->status ) {
 
 
-                    $data = array();
-    
-                    // header('Content-type: application/json');
-            
-                    $data_json_stripe = stripslashes( $decode->data );
-                    $data_decode = json_decode( $data_json_stripe );
-    
-                    // print_r( $data_decode );
-    
-                    // echo '<hr><hr>';
-    
-                    $total_acc = [];
-                    $total_precision = [];
-                    $total_recall = [];
-    
-                    foreach ( $data_decode AS $isi){
-    
-                        $kfold = $isi->kfold;
-                        $akurasi = $isi->akurasi;
-                        $precision = $isi->precision;
-                        $recall = $isi->recall;
-                        // $recall = $isi->classification_report->TRUE->recall;
-                        // $precision = $isi->classification_report->TRUE->precision;
-    
-    
-                        $total_acc[] = $akurasi;
-                        $total_precision[] = $isi->precision;
-                        $total_recall[] = $isi->recall;
-                        
-                        // data model 
-                        $dt_model = array();
-                        foreach ( $isi->model AS $mdl ) {
-    
-                            array_push( $dt_model, array(
-    
-                                'text'      => $mdl->text,
-                                'actual'    => $mdl->actual,
-                                'predict'    => $mdl->predict,
-                            ) );
-                        }
-    
-    
-                        array_push( $data, array(
-    
-                            'kfold'     => $kfold,
-                            'akurasi'   => $akurasi,
-                            'precision' => $precision,
-                            'recall' => $recall,
-                            'model'     => $dt_model,
-                            'TP' => $isi->TP,
-                            'TN' => $isi->TN,
-                            'FN' => $isi->FN,
-                            'FP' => $isi->FP,
-
-                            'train' => $isi->train,
-                            'test'  => $isi->test
-                        ) );
-    
-                    }
-
-
-                    $html = '<div class="alert alert-info">
-                        <b>Pemberitahuan</b><br>
-                        Processing berhasil dengan waktu '.$decode->execution.' detik pada '.date('d F Y H.i A').' 
-                    </div>';
-                    $this->session->set_flashdata('pesan', $html);
-    
-    
-                    return [
-    
-                        'data'  => $data,
-                        'avg_acc'   => array_sum($total_acc)/count($total_acc),
-                        'avg_precision'   => array_sum($total_precision)/count($total_precision),
-                        'avg_recall'   => array_sum($total_recall)/count($total_recall),
-    
-                    ];
+                    
     
                 } else {
     

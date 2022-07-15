@@ -224,12 +224,13 @@
 
         public function prosescrawling(){
 
+            $this->db->where('name', "crawling")->update("scheduling", ['status' => 1]);
 
             $keyword = $this->input->post('keyword');
             $jumlah = $this->input->post('jumlah');
             $max = $this->input->post('max');
 
-            $api = "http://127.0.0.1:5000/crawling?keyword=" . $keyword.'&jumlah='. $jumlah.'&max='. $max;
+            $api = "http://127.0.0.1:5000/crawling/". $keyword.'/'. $jumlah.'/'. $max;
             // $file = file_get_contents( $api );
             
             // create curl resource 
@@ -245,41 +246,15 @@
             // close curl resource to free up system resources 
             curl_close($ch); 
 
-            $decode = json_decode( $file );
+            $html = '<div class="alert alert-info">
+                <b>Pemberitahuan</b><br>
+                Sedang menjalankan proses crawling pada latar belakang, periksa notifikasi untuk melihat status terkini 
+            </div>';
+            $this->session->set_flashdata('pesan', $html);
+            redirect('dataset/index');
 
             
-            if ( $decode->status ) {
-
-
-                $data = array();
-
-                foreach ( $decode->data AS $isi){
-
-                    array_push( $data, array(
-
-                        'penulis'   => $isi->username,
-                        'isi'       => $isi->text,
-                        'tanggal_dataset'   => date('Y-m-d', strtotime($isi->date)),
-                        'label' => "",
-                        'sumber'=> "TWITTER" // TWITTER OR TURNBACKHOAX.ID
-                    ) );
-                }
-
-                // insert to db
-                $this->M_dataset->insert_batch( $data );
-
-                $html = '<div class="alert alert-info">
-                    <b>Pemberitahuan</b><br>
-                    Crawling berhasil dengan waktu '.$decode->execution.' detik pada '.date('d F Y H.i A').' 
-                </div>';
-                $this->session->set_flashdata('pesan', $html);
-
-                redirect('dataset/index');
-
-            } else {
-
-                echo "Crawling gagal !";
-            }
+           
             
             
         }

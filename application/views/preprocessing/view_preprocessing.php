@@ -86,7 +86,7 @@
 											<!--end::Dropdown-->
 
 											<!--begin::Button-->
-											<a href="javasript:;" id="btn-proses" class="btn btn-success font-weight-bolder">
+											<a href="<?php echo base_url('preprocessing/do_preprocessing') ?>" class="btn btn-success font-weight-bolder">
 											<span class="svg-icon svg-icon-md">
 												<!--begin::Svg Icon | path:/metronic/theme/html/demo8/dist/assets/media/svg/icons/Design/Flatten.svg-->
 												<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
