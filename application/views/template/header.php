@@ -66,6 +66,9 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--begin::Page Scripts(used by this page)-->
 		<script src="<?php echo base_url() ?>assets/js/pages/widgets.js?v=7.2.9"></script>
 		<!--end::Page Scripts-->
+
+
+		<link href="<?php echo base_url() ?>assets/plugins/custom/datatables/datatables.bundle.css?v=7.2.9" rel="stylesheet" type="text/css" />
 		
 		
 	</head>

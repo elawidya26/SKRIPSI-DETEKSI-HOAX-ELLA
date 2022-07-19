@@ -40,6 +40,39 @@
 			</span>
 		</div>
 		<!--end::Scrolltop-->
+
+
+		<script src="<?php echo base_url() ?>assets/plugins/custom/datatables/datatables.bundle.js?v=7.2.9"></script>
+		<script>
+
+			"use strict";
+			var KTDatatablesDataSourceHtml = function() {
+
+				var initTable1 = function() {
+					var table = $('#kt_datatable');
+
+					// begin first table
+					table.DataTable({
+						responsive: true,
+					});
+
+				};
+
+				return {
+
+					//main function to initiate the module
+					init: function() {
+						initTable1();
+					},
+
+				};
+
+			}();
+
+			jQuery(document).ready(function() {
+				KTDatatablesDataSourceHtml.init();
+			});
+		</script>
 		
 		
 	</body>

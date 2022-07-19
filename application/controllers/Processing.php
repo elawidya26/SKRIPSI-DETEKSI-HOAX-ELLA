@@ -293,6 +293,35 @@
 
            
         }
+
+
+
+
+
+
+        public function ig() {
+
+            $data = $this->db->get('processing')->row_array();
+
+            $dt_processing = $data['dt_processing'];
+            
+            $data_json_stripe = stripslashes( $dt_processing );
+            $cleaning = str_replace("\\n", "", $dt_processing);
+                
+            $cleaning = str_replace("\'","'",$cleaning); // remove only slash
+            $cleaning = stripslashes($cleaning); // remove only slash
+            $cleaning = stripslashes($cleaning); // remove only slash
+            $cleaning = stripslashes($cleaning); // remove only slash
+            $cleaning = str_replace('"[', "[", $cleaning);
+            $cleaning = str_replace(']"', "]", $cleaning);
+            $cleaning = str_replace('"{', "{", $cleaning);
+            $cleaning = str_replace('}"', "}", $cleaning);
+
+            $decode = json_decode( $cleaning );
+
+            header('Content-Type: application/json');
+            print_r( $decode );
+        }
     }
     
     /* End of file Dashboard.php */
